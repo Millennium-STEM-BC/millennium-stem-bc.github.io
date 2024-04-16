@@ -10,27 +10,7 @@ function switchBg(bg) {
         't2.png': 'Pawel Czerwinski'
     };
 
-    if (bg) {
-        var randomImage = bg;
-        var photographer = images[bg];
-    } else {
-        var keys = Object.keys(images);
-        var randomImage = keys[Math.floor(Math.random() * keys.length)];
-        var photographer = images[randomImage];
-
-        auth.onAuthStateChanged(function (user) {
-            if (user) {
-                const userRef = db.collection('Users').doc(user.uid)
-                userRef.update({
-                    bg: randomImage
-                }).then(() => {
-                    console.log('Updated bg image.');
-                }).catch((error) => {
-                    console.error(error);
-                })
-            }
-        })
-    }
+    var randomImage = bg;
     
     var body = document.getElementById('body');
     body.style.backgroundImage = 'url(/assets/img/index/' + randomImage + ')';
