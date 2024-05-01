@@ -1,80 +1,191 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Millennium STEM BC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-    <link rel="stylesheet" href="/assets/css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millennium STEM BC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </link>
+  <link rel="stylesheet" href="/assets/css/index.css">
+  </link>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="assets/js/firebase_init.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="assets/js/firebase_init.js"></script>
 </head>
 
-<body class="bg-black text-white relative" id="body">
-    <!-- Navigation -->
-    <nav class="absolute top-0 left-0 right-0 z-10 flex justify-between items-center p-8 select-none">
-        <div class="text-xs uppercase tracking-widest">
-            <a href="/index.html" class="text-gray-400 hover:text-white transition-colors duration-300 navbar-title">Millennium BC.</a>
-        </div>
-        <div class="flex space-x-6">
-            <a href="/our_team.html" class="text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-300 navbar-links">Our Team</a>
-            <a href="/stemcon_2024.html" class="text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-300 navbar-links">STEMCon 2024</a>
-            <a href="/unlocking_stem.html" class="text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-300 navbar-links">Unlocking STEM</a>
-            <a href="/past_initiatives.html" class="text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-300 navbar-links">Past Initiatives</a>
-            <button onclick="window.location='#'">
-                <p class="text-xs uppercase tracking-widest hover:text-gray-300 transition-colors duration-300 navbar-links">Join</p>
+<body class="bg-gray-100">
+
+  <div class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="text-lg font-semibold">Millennium STEM BC</div>
+      <div class="space-x-4 text-black">
+        <a href="/our_team.html" class="text-black-600 hover:text-blue-800 font-semibold">Our Team</a>
+        <a href="#" class="text-black-600 hover:text-blue-800 font-semibold">Volunteer Connector</a>
+        <a href="/stemcon_2024.html" class="text-black-600 hover:text-blue-800 font-semibold">StemCon 2024</a>
+        <a href="/unlocking_stem.html" class="text-black-600 hover:text-blue-800 font-semibold">Unlocking STEM</a>
+        <a href="/past_initiatives.html" class="text-black-600 hover:text-blue-800 font-semibold">Past Initiatives</a>
+        <button type="button" onclick="window.location='/stemcon_2024.html'"
+        class="inline-flex items-center rounded-md border-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 hover:scale-105 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join our mailing list
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-background py-32 text-center text-white">
+    <h1 class="text-6xl font-bold mb-4">Millennium STEM BC</h1>
+    <button type="button" onclick="window.location='/stemcon_2024.html'"
+      class="inline-flex items-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">STEMCon
+      2024 - 12th October 2024</button>
+  </div>
+
+  <div class="max-w-7xl mx-auto py-12">
+    <div class="bg-white p-8 shadow-md">
+      <div class="bg-white p-8 shadow-md">
+        <div class="container mx-auto px-4 py-12">
+          <!-- Our Mission -->
+          <h1 class="text-4xl font-bold mb-4">Our Mission</h1>
+          <p class="text-lg mb-12">As a STEM youth non-profit, our organization aims to provide equal opportunities for
+            youth in BC to pursue professions in STEM. We recognize that STEM is an extremely competitive field that
+            many ambitious students wish to pursue; through the initiatives of our organization, we hope to create
+            opportunities for individuals, particularly those from disadvantaged backgrounds, to develop skill sets and
+            networks that will help them pursue their passions.</p>
+
+          <!-- Our Impact -->
+          <h1 class="text-4xl font-bold mb-4">Our Impact</h1>
+          <div class="bg-white py-24 sm:py-16">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+              <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-2">
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600">Students engaged</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">200+</dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600">Initiatives developed</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">7+</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <!-- STEMCon Highlights -->
+          <h2 class="text-3xl font-bold mb-6">STEMCon Highlights</h2>
+          <div class="flex justify-center mb-6">
+            <video controls class="w-full max-w-4xl rounded-md">
+              <source src="/assets/vid/index/STEMCon_2019.mp4" type="video/mp4">
+              Sorry, your browser does not support the video tag. Please try refreshing the page or use a different
+              browser.
+            </video>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <img src="/assets/img/index/stemcon_highlights/IMG_3117.jpg"
+              alt="A group of students engaging in a STEM workshop, working on a project together."
+              class="w-full h-auto rounded-md">
+            <img src="/assets/img/index/stemcon_highlights/IMG_3273.jpg"
+              alt="Students and mentors gathered around a table discussing STEM concepts with laptops and notes."
+              class="w-full h-auto rounded-md">
+            <img src="/assets/img/index/stemcon_highlights/IMG_3357.jpg"
+              alt="A presenter at STEMCon demonstrating a scientific experiment to an audience of students."
+              class="w-full h-auto rounded-md">
+            <img src="/assets/img/index/stemcon_highlights/IMG_4993.jpeg"
+              alt="A group of students engaging in a STEM workshop, working on a project together."
+              class="w-full h-auto rounded-md">
+            <img src="/assets/img/index/stemcon_highlights/IMG_5017.jpeg"
+              alt="Students and mentors gathered around a table discussing STEM concepts with laptops and notes."
+              class="w-full h-auto rounded-md">
+            <img src="/assets/img/index/stemcon_highlights/IMG_7967.jpeg"
+              alt="A presenter at STEMCon demonstrating a scientific experiment to an audience of students."
+              class="w-full h-auto rounded-md">
+            <!-- Repeat the pattern for more images if needed -->
+          </div>
+          <div class="text-center">
+            <button type="button"
+              class="inline-flex hover:scale-105 transition-transform duration-200 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Learn more about STEMCon 2024
             </button>
+          </div>
         </div>
-    </nav>
-
-    <!-- Main -->
-    <div class="flex flex-col lg:flex-row items-center justify-between px-8 lg:px-16 py-32">
-        <div class="lg:w-1/2">
-            <div class="text-xs font-bold mb-2">01</div>
-            <h1 class="text-6xl font-bold mb-6" id="title">Welcome to Millennium STEM BC.</h1>
-            <p class="mb-6">Our mission is to provide equal opportunities for youth in British Columbia to pursue professions in STEM and to be innovative in their career paths. We aim to equip them with technological skills that enable success in their futures through our annual events.</p>
-            <button onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=sf_link'" class="bg-white text-black px-6 py-2 uppercase text-xs tracking-widest font-bold hover:bg-gray-200 transition-colors duration-300">Join our Mailing List</button>
-        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <div class="footer absolute bottom-0 left-0 right-0 p-8">
-        <div class="flex justify-between items-center">
-            <div class="flex flex-col">
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <!-- <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a> -->
-                </div>
-            </div>
-
-            <div class="flex items-center">
-                <div class="text-xs font-bold mr-8">02</div>
-                <div class="flex space-x-8">
-                    <div class="text-center">
-                        <h2 class="text-xs uppercase tracking-widest mb-1" style="font-size: 12px;">About us</h2>
-                        <button onclick="window.location='#'" class="bg-transparent border border-white px-4 py-1 uppercase text-xs tracking-widest font-bold hover:bg-white hover:text-black transition-colors duration-300" style="font-size: 10px; white-space: nowrap;">Learn more</button>
-                    </div>
-                    <div class="text-center" id="my-missions">
-                        <h2 class="text-xs uppercase tracking-widest mb-1" style="font-size: 12px;">My missions</h2>
-                        <button onclick="window.location='#'" class="bg-transparent border border-white px-4 py-1 uppercase text-xs tracking-widest font-bold hover:bg-white hover:text-black transition-colors duration-300" style="font-size: 10px; white-space: nowrap;">View</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex items-center" id="switch-btn">
-            </div>
+  <!-- Newsletter -->
+  <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 justify-center">
+      <div class="flex items-center grid-cols-1 gap-x-8 gap-y-16 justify-center">
+        <div class="max-w-xl lg:max-w-lg justify-center">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.</h2>
+          <p class="mt-4 text-lg leading-8 text-gray-300">To get early updates on our opportunities and events!</p>
+          <div class="mt-6 flex max-w-md gap-x-4">
+            <label for="email-address" class="sr-only">Email address</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required
+              class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+              placeholder="Enter your email">
+            <button type="submit"
+              class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+      <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Recognitions -->
+  <div class="bg-gray-900 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm text-white">
+        We would like to acknowledge that Millennium STEM BC is situated on the unceded territories of the Coast
+        Salish peoples—Sḵwx̱wú7mesh (Squamish), Stó:lō and Səl̓ílwətaɬ (Tsleil-Waututh), and xʷməθkʷəy̓əm (Musqueam)
+        Nations, and we honour the many territorial keepers of the lands on which we work, seek to recognize and
+        address the systemic barriers that have historically restricted Indigenous peoples from pursuing success in
+        STEM fields, thereby excluding critically valuable diverse perspectives. Funding scientific research, and
+        preserving their cultures, languages, and traditions. Our work in diversifying STEM spaces is not complete.
+        Decolonization is an ongoing process—we aim to elevate Indigenous voices in all of our initiatives, and to
+        continually grow our understanding of how we can contribute to the reconciliation process.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative isolate overflow-hidden bg-gray-900">
+    <div class="mx-auto flex item-center max-w-7xl justify-center">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6" style="color: white;">
+        <!-- Instagram and Email -->
+        <button onclick="window.location='https://www.instagram.com/millenniumbc/'">
+          <div class="flex items-center space-x-4 mb-6">
+            <a href="https://www.instagram.com/millenniumbc" class="text-white">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <span class="text-sm">millenniumbc</span>
+          </div>
+        </button>
+        <button onclick="window.location='mailto:millenniumstem.bc@gmail.com'">
+          <div class="flex items-center space-x-4 mb-6">
+            <a href="mailto:millenniumstem.bc@gmail.com" class="text-white">
+              <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <span class="text-sm">millenniumstem.bc@gmail.com</span>
+          </div>
+        </button>
+        <!-- Divider -->
+        <div class="col-span-2 md:col-span-3">
+          <hr class="border-gray-600 my-6">
+        </div>
+        <!-- Copyright -->
+        <div class="col-span-2 md:col-span-3 text-sm">
+          &copy; 2024 Millennium STEM British Columbia
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 <script src="/assets/js/index.js"></script>
 
