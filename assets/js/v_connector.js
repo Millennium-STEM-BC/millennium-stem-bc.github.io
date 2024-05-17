@@ -17,7 +17,7 @@ function search() {
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const data = doc.data();
-                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.status, data.url);
+                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
                     });
                 })
                 .catch((error) => {
@@ -27,7 +27,7 @@ function search() {
     }
 }
 
-function add(title, organization, description, status, url) {
+function add(title, organization, description, url, type, location, status) {
     const titleWords = title.toLowerCase().split(' ');
     const organizationWords = organization.toLowerCase().split(' ');
 
@@ -37,18 +37,21 @@ function add(title, organization, description, status, url) {
         organization: organization,
         organizationWords: organizationWords,
         description: description,
-        status: status,
-        url: url
+        url: url,
+        type: type,
+        location: location,
+        status: status
     })
 }
 
-function createOpportunityCard(title, organization, status, url) {
+function createOpportunityCard(title, organization, description, url, type, location, status) {
     return `
         <div class="bg-white shadow rounded-lg p-4 mb-4 flex justify-between items-center hover:scale-105 transition-transform duration-200">
             <div>
                 <h3 class="text-lg font-bold">${title}</h3>
                 <p class="text-gray-600 font-semibold">${organization}</p>
-                <span class="text-green-600">${status}</span>
+                <p class="text-gray-600 my-2 mr-16">${description}</p>
+                <span class="text-white text-sm rounded-lg bg-blue-700 px-2 py-1">${type}</span><span class="text-white text-sm px-2 py-1 mx-2 rounded-lg bg-teal-700">${status}</span>
             </div>
             <a href="${url}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-200">View</a>
         </div>
@@ -62,7 +65,7 @@ function loadOpportunityCards() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
-                div.innerHTML += createOpportunityCard(data.title, data.organization, data.status, data.url);
+                div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
             });
         })
         .catch((error) => {
@@ -85,22 +88,41 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
 });
 
 function processCSV(text) {
-    const lines = text.split('\n');
-    const headers = lines[0].split(',');
+    // Split the text into lines and remove any leading/trailing whitespace
+    const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+    // Split the first line into headers
+    const headers = lines[0].split(',').map(header => header.trim());
 
     lines.slice(1).forEach(line => {
-        const data = line.split(',');
-        const docData = {};
+        // Use a regular expression to handle commas within quoted fields correctly
+        const data = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g).map(field => field.trim());
 
-        headers.forEach((header, index) => {
-            docData[header.trim()] = data[index].trim();
-        });
+        if (data.length === headers.length) {
+            const docData = {};
 
-        db.collection('V_Connector').add(docData)
-            .then(() => {
-                console.log('Document successfully written!');
-            })
-            .catch(error => console.error('Error writing document: ', error));
+            headers.forEach((header, index) => {
+                let value = data[index];
+                // Remove any leading and trailing quotation marks from the description field
+                if (header === 'description') {
+                    value = value.replace(/^"+|"+$/g, '');
+                }
+                if (header === 'url' && !/^https?:\/\/.+$/.test(value)) {
+                    value = 'N/A';
+                }
+                if (header === 'location' && !/^[a-zA-Z0-9\s,]+$/.test(value)) {
+                    value = 'N/A';
+                }
+                docData[header] = value;
+            });
+
+            db.collection('V_Connector').add(docData)
+                .then(() => {
+                    console.log('Document successfully written!');
+                })
+                .catch(error => console.error('Error writing document: ', error));
+        } else {
+            console.warn('Data length mismatch, skipping line:', line);
+        }
     });
 }
 
