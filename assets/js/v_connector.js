@@ -51,7 +51,7 @@ function createOpportunityCard(title, organization, description, url, type, loca
                 <h3 class="text-lg font-bold">${title}</h3>
                 <p class="text-gray-600 font-semibold">${organization}</p>
                 <p class="text-gray-600 my-2 mr-16">${description}</p>
-                <span class="text-white text-sm rounded-lg bg-blue-700 px-2 py-1">${type}</span><span class="text-white text-sm px-2 py-1 mx-2 rounded-lg bg-teal-700">${status}</span>
+                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span>
             </div>
             <a href="${url}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-200">View</a>
         </div>
@@ -62,7 +62,7 @@ function loadOpportunityCards() {
     div = document.getElementById('opportunity-cards');
 
     db.collection('V_Connector').get()
-        .then((querySnapshot) => {
+         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
                 div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
