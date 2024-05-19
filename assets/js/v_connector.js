@@ -53,7 +53,16 @@ function createOpportunityCard(title, organization, description, url, type, loca
                 <p class="text-gray-600 my-2 mr-16">${description}</p>
                 <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span>
             </div>
-            <a href="${url}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-200">View</a>
+
+            <span class="sm:ml-3">
+                <button onclick="window.location='${url}'" type="button" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+              
+                    View
+                </button>
+            </span>
         </div>
     `;
 }
@@ -62,7 +71,7 @@ function loadOpportunityCards() {
     div = document.getElementById('opportunity-cards');
 
     db.collection('V_Connector').get()
-         .then((querySnapshot) => {
+        .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
                 div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
