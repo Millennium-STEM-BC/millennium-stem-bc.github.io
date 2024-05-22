@@ -1,0 +1,323 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium STEM BC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="assets/js/firebase_init.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="/index.html">
+                <div class="text-lg font-semibold">Millennium STEM BC</div>
+            </a>
+            <div class="space-x-4 text-black">
+                <a href="/our_team.html" class="text-black-600 hover:text-blue-800 font-semibold">Our Team</a>
+                <a href="/v_connector.html" class="text-black-600 hover:text-blue-800 font-semibold">Volunteer
+                    Connector</a>
+                <a href="/stemcon_2024.html" class="text-black-600 hover:text-blue-800 font-semibold">StemCon 2024</a>
+                <a href="/unlocking_stem.html" class="text-black-600 hover:text-blue-800 font-semibold">Unlocking
+                    STEM</a>
+                <a href="/past_initiatives.html" class="text-black-600 hover:text-blue-800 font-semibold">Past
+                    Initiatives</a>
+                <button type="button"
+                    onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=sf_link'"
+                    class="inline-flex items-center rounded-md border-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 hover:scale-105 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join
+                    our mailing list
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-background py-32 text-center text-white">
+        <h2 class="text-4xl italic font-bold mb-4">Get your STEM ON with</h2>
+        <h1 class="text-8xl font-bold mb-4">STEMCon 2024</h1>
+        <p class="text-lg mb-12">October 12, 2024, 8:30AM - 4PM</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-12">
+        <div class="bg-white p-8 shadow-md">
+            <div class="container mx-auto px-4 py-4">
+                <!-- What is STEMCon? -->
+                <h1 class="text-4xl font-bold mb-4">What is STEMCon?</h1>
+                <p class="text-lg mb-12">An innovative STEM conference for students in Grade 8-12, featuring 2 keynotes,
+                    3 workshop streams and a networking fair. This conference has been held since 2017 in Vancouver,
+                    creating opportunities for youth to learn more about various STEM fields through hands-on
+                    activities.</p>
+
+                <div class="text-center">
+                    <button type="button"
+                        class="inline-flex hover:scale-105 transition-transform duration-200 rounded-md bg-black-600 px-6 py-4 text-md font-semibold text-black shadow-sm hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border-solid border-2 border-black-600">
+                        Registration for STEMCon 2024 will open soon
+                    </button>
+                </div>
+
+                <!-- Schedule -->
+                <h1 class="text-4xl font-bold mb-4 pt-4">Schedule</h1>
+                <div class="bg-white py-4">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div>
+                            <div class="px-4 sm:px-0">
+                                <h3 class="text-base font-semibold leading-7 text-gray-900">Schedule of STEMCon 2024</h3>
+                                <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Registration will open soon.</p>
+                            </div>
+                            <div class="mt-6 border-t border-gray-100">
+                                <dl class="divide-y divide-gray-100">
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">8:30 - 9:00AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Registration</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">9:00 - 9:15AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Opening Ceremony</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">9:15 - 9:45AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Opening Keynote</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">9:45 - 10:00AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Ideathon Presentation</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">10:00 - 10:15AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Break</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">10:15 - 11:45AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Workshop A</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">11:45 - 12:45AM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Lunch & Networking Fair</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">12:45 - 2:15PM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Workshop B</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">2:45 - 3:30PM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Ideathon</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">3:30 - 3:50PM</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Closing Keynote</dd>
+                                    </div>
+                                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                        <dt class="text-sm font-medium leading-6 text-gray-900">3:50 - 4:00</dt>
+                                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Closing Ceremony</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel -->
+                <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_3117.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_3273.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_3357.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_4993.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_5017.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/index/stemcon_highlights/IMG_7967.jpeg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </div>
+                    </div>
+
+                    <!-- Slider indicators -->
+                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                            data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                            data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                            data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                            data-carousel-slide-to="3"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                            data-carousel-slide-to="4"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+                            data-carousel-slide-to="5"></button>
+                    </div>
+
+                    <!-- Slider controls -->
+                    <button type="button"
+                        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 1 1 5l4 4" />
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button"
+                        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" style="padding-top: 10px;">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_3117.jpg"
+                        alt="A group of students engaging in a STEM workshop, working on a project together."
+                        class="w-full h-auto rounded-md">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_3273.jpg"
+                        alt="Students and mentors gathered around a table discussing STEM concepts with laptops and notes."
+                        class="w-full h-auto rounded-md">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_3357.jpg"
+                        alt="A presenter at STEMCon demonstrating a scientific experiment to an audience of students."
+                        class="w-full h-auto rounded-md">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_4993.jpeg"
+                        alt="A group of students engaging in a STEM workshop, working on a project together."
+                        class="w-full h-auto rounded-md">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_5017.jpeg"
+                        alt="Students and mentors gathered around a table discussing STEM concepts with laptops and notes."
+                        class="w-full h-auto rounded-md">
+                    <img src="/assets/img/index/stemcon_highlights/IMG_7967.jpeg"
+                        alt="A presenter at STEMCon demonstrating a scientific experiment to an audience of students."
+                        class="w-full h-auto rounded-md">
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="window.location='/stemcon_2024.html'"
+                        class="inline-flex hover:scale-105 transition-transform duration-200 rounded-md bg-black-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 border-solid border-2 border-black-600">
+                        Learn more about STEMCon 2024
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 justify-center">
+            <div class="flex items-center grid-cols-1 gap-x-8 gap-y-16 justify-center">
+                <div class="max-w-xl lg:max-w-lg justify-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.
+                    </h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-300">To get early updates on our opportunities and
+                        events!</p>
+                    <div class="mt-6 flex max-w-md gap-x-4">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                            placeholder="Enter your email">
+                        <button type="submit" onclick="subscribeNewsletter()"
+                            class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+            <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Recognitions -->
+    <div class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm text-white select-none">
+                We would like to acknowledge that Millennium STEM BC is situated on the unceded territories of the Coast
+                Salish peoples—Sḵwx̱wú7mesh (Squamish), Stó:lō and Səl̓ílwətaɬ (Tsleil-Waututh), and xʷməθkʷəy̓əm
+                (Musqueam)
+                Nations, and we honour the many territorial keepers of the lands on which we work, seek to recognize and
+                address the systemic barriers that have historically restricted Indigenous peoples from pursuing success
+                in
+                STEM fields, thereby excluding critically valuable diverse perspectives. Funding scientific research,
+                and
+                preserving their cultures, languages, and traditions. Our work in diversifying STEM spaces is not
+                complete.
+                Decolonization is an ongoing process—we aim to elevate Indigenous voices in all of our initiatives, and
+                to
+                continually grow our understanding of how we can contribute to the reconciliation process.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative isolate overflow-hidden bg-gray-900">
+        <div class="mx-auto flex item-center max-w-7xl justify-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6" style="color: white;">
+                <!-- Instagram and Email -->
+                <button onclick="window.location='https://www.instagram.com/millenniumbc/'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="https://www.instagram.com/millenniumbc" class="text-white">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumbc</span>
+                    </div>
+                </button>
+                <button onclick="window.location='mailto:millenniumstem.bc@gmail.com'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="mailto:millenniumstem.bc@gmail.com" class="text-white">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumstem.bc@gmail.com</span>
+                    </div>
+                </button>
+                <!-- Divider -->
+                <div class="col-span-2 md:col-span-3">
+                    <hr class="border-gray-600 my-6">
+                </div>
+                <!-- Copyright -->
+                <div class="col-span-2 md:col-span-3 text-sm">
+                    &copy; 2024 Millennium STEM British Columbia
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+<script src="/assets/js/index.js"></script>
+
+</html>
