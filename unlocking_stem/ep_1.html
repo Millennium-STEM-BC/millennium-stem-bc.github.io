@@ -1,0 +1,514 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium STEM BC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/stemcon_2024.css" />
+    <link rel="stylesheet" href="/assets/css/unlocking_stem.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="/assets/js/helpers/add_to_calendar_btn.js" async defer></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="assets/js/firebase_init.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="/index.html">
+                <div class="text-lg font-semibold">Millennium STEM BC</div>
+            </a>
+            <div class="space-x-4 text-black">
+                <a href="/our_team.html" class="text-black-600 hover:text-blue-800 font-semibold">Our Team</a>
+                <a href="/v_connector.html" class="text-black-600 hover:text-blue-800 font-semibold">Volunteer
+                    Connector</a>
+                <a href="/stemcon_2024.html" class="text-black-600 hover:text-blue-800 font-semibold">StemCon 2024</a>
+                <a href="/unlocking_stem.html" class="text-black-600 hover:text-blue-800 font-semibold">Unlocking
+                    STEM</a>
+                <a href="/past_initiatives.html" class="text-black-600 hover:text-blue-800 font-semibold">Past
+                    Initiatives</a>
+                <button type="button"
+                    onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=sf_link'"
+                    class="inline-flex items-center rounded-md border-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 hover:scale-105 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join
+                    our mailing list
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-background py-32 text-center text-white">
+        <h1 class="text-8xl font-bold mb-4">Unlocking STEM</h1>
+        <h2 class="text-4xl italic font-bold mb-4">Speaker series</h2>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-12">
+        <div class="bg-white p-8 shadow-md">
+            <div class="container mx-auto px-4 py-4">
+                <!-- Transcripts -->
+                <div>
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-3/4">
+                            <h1 class="text-2xl font-bold mb-4">Unlocking STEM Episode 1: The Intersection of STEM and
+                                Business!</h1>
+                            <p class="text-sm text-gray-600 mb-2">Interview with Winnie Lai-Fong</p>
+                            <p class="text-sm text-gray-600 mb-4">Host: Rachel Heo</p>
+                            <div class="space-y-4">
+                                <p class="text-md font-semibold text-gray-900">(Intro Music)</p>
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Hi Winnie, how are you doing
+                                    today? I wanted to ask a few
+                                    questions about your journey in STEM!</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Yeah, most certainly.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Sounds good. To start off, can
+                                    you tell me a little bit about
+                                    yourself?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Okay sure, yes. I am a
+                                    first generation Chinese
+                                    Canadian with immigrant parents that moved here in the seventies. So I think in a
+                                    way they have imparted to me work ethics that make up who I am today.
+                                    Professionally, I'm an engineer by training and have moved to the business side with
+                                    a focus on program management. But I have always will have that geeky or tech-y side
+                                    to me because the technology side is always near and dear to my heart. On a personal
+                                    level, I'm a wife and the mother of two teenagers, two teenagers to, I am very proud
+                                    of.
+                                    <br><br>
+                                    What else, as a person, I'm someone who's always on the lookout for the next
+                                    challenge to stretch myself, the next thing to learn, the next thing to tackle, to
+                                    make things better. So you can say that I'm not entirely content with the status
+                                    quo, but I having said that I'm very grateful for what I have in life. So I'm very
+                                    active in giving back, giving back to my faith community, to my professional
+                                    community, my children's extracurricular community, and also to give back by
+                                    investing in young talents at work. So I love developing people and helping them to
+                                    grow and achieve beyond what they thought they could.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>You sound very passionate about
+                                    STEM. So what inspired you or
+                                    who inspired you to pursue a career in STEM?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>I'd have to say it
+                                    goes all the way back to high
+                                    school when I was in grade 11. So my grade 11 physics teacher, I really enjoyed
+                                    physics and the pivotal point was when he recommended, he highly encouraged me to
+                                    apply for the summer program at SFU, where they were looking for several summer
+                                    students to work in the physics department for research projects. And with his
+                                    encouragement, I applied and I was chosen. I was one of the five people chosen. I
+                                    was the only girl. I was only 16 at that time. And after working with the other four
+                                    guys that summer, I came to realize that I could do anything that they could do. And
+                                    with a passion for STEM, you know they talked a lot about engineering and STEM and I
+                                    thought, “hey, that's very interesting too”, and I can do that. So I would say that
+                                    really kind of was a pivotal point of my STEM journey. It was that summer. So what
+                                    started it was my physics teacher and working with other people, but what really is
+                                    sustaining and has sustained my journey in STEM was really various female engineers
+                                    and also professors along the way that they have become true role models for me.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Sounds like a very unique
+                                    experience you had with like the only
+                                    female part. So during your journey in STEM, did you have any challenges that you
+                                    had to face?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>I'd say no looking
+                                    back, you know, because when I
+                                    went to UBC in engineering, there were very few girls, there were only four girls
+                                    out of a class of a hundred. So I think that disparity was a bit of a challenge by
+                                    itself. But looking back, the biggest challenge was probably being in the first
+                                    cohort of UBC four year engineering program. So prior to that year, UBC engineering
+                                    was a five-year thing. It was a first year science and then four year engineering.
+                                    But that particular year they decided to try for the first time to combine
+                                    everything into four years, which meant that it was really combining first year
+                                    science with first year engineering.
+                                    <br><br>
+                                    And it was really, I would say super hard, super challenging. I don't ever recall
+                                    working that hard in my entire life. There were 70 of us that started the program
+                                    and after first year, there were only slightly over 40 of us left. And in fact, the
+                                    hard work wasn't just at first, it was like all four years. It was really hard work.
+                                    So I would say really what taught me doing the four-year program was perseverance,
+                                    discipline, and hard work. And those have become part of my values and work ethics
+                                    as I move from a student to the working world.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>You got lots of values and very
+                                    like life lessons from that
+                                    experience. Through all those experiences, you got a very amazing job. So what do
+                                    you love about your job? And you might want to introduce a little bit about your job
+                                    as well.</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Okay sure. What I do
+                                    at Telus is program management
+                                    for a technician systems of engagement. So this is basically the applications and
+                                    systems for technicians to get their work schedule to them and how they interact
+                                    with customers and the rest of Telus. So what I love about it is that I get to
+                                    leverage technology to improve the quality of everyday life, everyday life for the
+                                    technicians and for the customers to make it easier for them to communicate with
+                                    each other, to make transactions easier between the customers and the technicians,
+                                    and also for technicians to stay informed.
+                                    <br><br>
+                                    I know that I'm making a difference because I get positive feedback from the users
+                                    of the systems. So precisely it is the technicians who have given very positive
+                                    feedback saying that it has made the everyday job easier. It has cut certain times
+                                    for them so that they don't have to spend as long waiting for certain things,
+                                    basically has made their everyday work life easier and more enjoyable. So I find
+                                    that very satisfying. Another thing that I really like about my work is that I get
+                                    to drive the system strategy, the application strategy for the technicians, and have
+                                    I also have the project team and the resources to execute on the strategy and also
+                                    be able to measure the improvements that these projects are giving.
+                                    <br><br>
+                                    So when you think about it, it is really an end to end ownership, and it's very
+                                    satisfying to see how an idea moves from the concept stage all the way to reality
+                                    and delivering bottom line benefits to the company, and also improvements to team
+                                    engagement, the people who are using the systems.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>It seems like your job has both
+                                    STEM side and business side. So
+                                    what catalyzed your motivation to pursue a career with such fields?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Yeah, that's a good
+                                    question. I'd have to look back
+                                    and say that it was something that I realized and learned about myself when I was
+                                    doing a masters program. So I was doing a master's in applied science after my
+                                    bachelor's degree. And my focus at that time was integrated optics. So essentially
+                                    that was building an optical circuit on this very special material. And so besides
+                                    doing mathematical modeling and computer simulation of the optical waves, I also had
+                                    to work in a lab to make the actual optical circuit. And, you know, if you think
+                                    about it was, that was not geeky, true, geeky stem.
+                                    <br><br>
+                                    I don't know what was right, but as I was working in the lab, I realized that I was
+                                    not very good at that type of work. I was not very good at delicate work. I kept
+                                    breaking things. I don't recall how many pieces of that precious optical materials I
+                                    had broken. I just made my professor cringe. I'd made myself cringe and because I
+                                    kept breaking the optics material, I was very slow in my lab work. And not only
+                                    that, I realized that I was also not very careful with chemicals because as part of
+                                    that lab work, I had to use chemicals to clean, to process the materials itself.
+                                    <br><br>
+                                    And how did I realize that I was careless with it, even though I was working under
+                                    the fume hood, I found perfectly round holes on top of my socks. So we're talking
+                                    about holes, not in the toe part of my socks, but on top of my feet. And the only
+                                    way that those holes could have gotten there was I had inadvertently dropped some
+                                    tiny droplets of some corrosive material on top of my socks. So all of that really
+                                    made me realize that, yeah, I was really not careful and to top it off. I also found
+                                    that I didn't like working in isolation. As part of my research, I had to work in a
+                                    cold laser light lab to do different measurements.
+                                    <br><br>
+                                    And I found that was not really what I enjoy doing. I, I really wanted to be working
+                                    with people, to bounce ideas off people instead of working in isolation. So all in
+                                    all I'd say through self-discovery, I found that I, I thought I enjoyed pure
+                                    research, but actually I enjoyed it less than I had thought. And I found that I
+                                    really like working in a team environment and that's what really steered me towards
+                                    to more on the business side than pure stem. And now I say that you know, my career
+                                    now has both the stem and business side. And as I look back in the various years of
+                                    my career, I can say that it has gradually been shifting more from stem to business,
+                                    such that today is predominantly business with a much smaller stem component.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>You took a very unique approach,
+                                    now I am wondering, did you
+                                    have any troubles like adjusting to the business career without prior business
+                                    education?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>A lot of it was on the
+                                    job training and I'd have to
+                                    say that had some very good mentors along the way. One of my managers was really,
+                                    really good with project management and through her, I learned a lot about project
+                                    management. What does it mean? And that also sparked my own interest to take courses
+                                    online, to learn more about project management and program management.
+                                    <br><br>
+                                    Another one of my mentor was someone that was really good at thinking strategically
+                                    looking at strategic planning and looking at how to measure benefits for a project
+                                    and from him, I learned that yes is important to have a strategy for any project and
+                                    is just as important to be able to think about measuring the benefits of the outcome
+                                    at the onset of the project and not at the end, such it can built in measurements
+                                    along the way so that you can measure the progress. And at the end, you can say
+                                    definitively, whether you've actually met your goal or not, and how it is performing
+                                    and how it has helped the company. So I think those things has really kind of helped
+                                    me along the way.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>It seems like you have a very
+                                    long, interesting journey, high
+                                    school, university, to even a career. In your opinion, what is the most interesting
+                                    development and development in your field and why should people care about it?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Okay. Then I think I
+                                    have to take a bit of a
+                                    divergence from the technician side. Cause when I think of my field, it is really
+                                    the telecommunications field, right? So the broad telecom, and I'd say the most
+                                    exciting development in telecom is five G, which is the next generation of mobile
+                                    technology. So we're currently on 4g. So our phones, mobile technologies on 4g. And
+                                    why should people care about five G is because 5g will give us three things. It will
+                                    give us higher speed, internet of things, and also lower latency.
+                                    <br><br>
+                                    I'm not going to go into details of how these things are going to help, but in
+                                    combination, they really going to give us better productivity in terms of how work
+                                    is being done, which it will be good for the Canadian economy. And as consumers, 5g
+                                    will also give us better home automation, give us smarter homes, which if you think
+                                    about it now there's a lot of home automation happening already today and there'll
+                                    be even more with 5g and eventually going to smart cities. So smart cities would
+                                    include things like autonomous cars cars that can communicate with each other.
+                                    <br><br>
+                                    And, and you may ask yourself, you know, why is it important for cars to communicate
+                                    with each other? So an example would be, you know, if, if cars can communicate with
+                                    each, each other, then even you, even if you're kind of driving it, you know, it's a
+                                    bit autonomous and then there's an accident. If a car is the first car at the
+                                    accident, sites can tell the other cars that, Hey, there's an accident here, take a
+                                    different route. Then think about how much more efficient and better it is for
+                                    people to avoid that traffic jam, that avoid accident sites. So that's just one
+                                    example of what 5g is going to give us.
+
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>That sounds very innovative. So
+                                    throughout your journey. What
+                                    were some of your life lessons?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Okay, so I'd say I'm
+                                    going back to my university
+                                    years you know, just having that perseverance and discipline what I learned in my
+                                    engineering, my four year engineering program, that goes a long way. You know, these
+                                    are habits that have served me really well and have helped have helped me to
+                                    overcome challenges. So I'd say that the earlier someone develops those discipline
+                                    early on in life and integrating the habits the better. And I guess the second thing
+                                    is just be honest with yourself about what you like and what you don't like.
+                                    <br><br>
+                                    You know, some people maybe by the age of 12, you know, they know exactly what field
+                                    they want to go into, but I'd say most people don't, or they change their mind
+                                    multiple times and that's perfectly okay. So when I look back, you know, I thought I
+                                    would like research, but I ended up liking business more. And ultimately what you
+                                    want to do is to find something that you enjoy doing, that you're good at, and that
+                                    you get paid for it, right? That's always tell people, you know, what you want, the
+                                    intersection of those three things such that you know it's like a Venn diagram and
+                                    you get three circles. And the intersection point is that sweet spot. I guess two
+                                    other things I want to touch on is that, you know, being a lifelong learner and
+                                    staying curious and keep learning, these are lessons that I've learned is very, very
+                                    important. And I'm not talking about just in a formal learning and taking courses.
+                                    <br><br>
+                                    That's good too, but I'm talking about learning from other people, learning from
+                                    people who are more experienced than myself, even people who are less experienced
+                                    than myself, because when you think about it, almost everyone that we interact with,
+                                    we can always learn something from them. And having this mindset has really helped
+                                    me be more curious, be kinder and also more humble when I interact with people. And
+                                    I say, finally, the last one last lesson that I've learned is that there's always a
+                                    story behind the face. So often I think, you know, all of us, it's easy for us to be
+                                    too quick to judge or label anyone label someone. And I know that I've done that
+                                    many times in my life and only to find that I was wrong in my assumptions. So with
+                                    age, I've learned to be slower to judge and allow room for the story to come out
+                                    when I interact with people.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Yeah. That could be a lesson for
+                                    all of us. I do that as well
+                                    so what was your favorite moment or part in your entire journey?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>I'd say that's hard to
+                                    say because there's been so
+                                    many pivotal points and I really enjoy what I'm doing now. So I'd say just the
+                                    learning process of self-discovery of finding out new things that I enjoy doing and
+                                    integrating that into who I am integrating that into my practice and, and you know,
+                                    that lifelong learning that being able to integrate strategy and technology and
+                                    business and being able to measure the outcome and being good with numbers in terms
+                                    of dollars, you know, doing the business case, managing capital, all of these
+                                    things, I'd say these are really good skills that I've accumulated along the way.
+                                    And, and I'd love to say that I planned it all out, but I didn't, you know, a lot of
+                                    it was just kind of it happened along the way and I recognized that those were good
+                                    things. I integrated them. So I would say that I'm very lucky, that way that along
+                                    my journey, I learned many different things which have really added to my toolkit.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Hmm. What are some of your
+                                    advices to like high school
+                                    students?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Uh I would say high
+                                    school students, I would say
+                                    conquer what you're most afraid of. So as an example when I was in high school, I
+                                    was super, super fearful of public speaking. And that even lasted no until I was
+                                    like in my early twenties. And, you know, when I say super fearful, what I mean is
+                                    that I would get so nervous that I would feel like throwing up, you know, oh, you
+                                    know, get all sweaty or just really be super nervous. And and that didn't serve me
+                                    well. And that was the fear that it took me until I was, I think it was when I was
+                                    23, that I finally joined something called Toastmasters to practice public speaking.
+                                    <br><br>
+                                    So I would say that that was my case. I would say that to anyone, you know, in their
+                                    teens that find out what you're most afraid of and look at it, head on in the eye,
+                                    face it, conquer it, because really when you can conquer that first fear that will
+                                    help you to become more courageous in looking at all your other fears and not let
+                                    fear paralyze you because so often when we're afraid of something, we avoid it, we
+                                    find different ways to bypass it, but that fear will always come back and will
+                                    hinder us in our personal growth.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>I you talked a lot about giving
+                                    back in the beginning. I know
+                                    that you're doing something externally, which is like related to giving back. So can
+                                    you tell me a little bit about that?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Okay, sure. I'd love
+                                    to talk about bringing women
+                                    together, which is intercompany organization to advance both diversity,
+                                    inclusiveness and women in leadership. And it has six companies as a consortium. So
+                                    it has to telus SAP, KPMG, Ascenture, Ledcor and Vancity, and together as a group of
+                                    women and we're all volunteer and we don't get paid for this at all. You know, we
+                                    put together events and forums to advance the discussion on women leadership and
+                                    also how to advance diversity and inclusiveness and practices that each company can
+                                    share with each other and also learn from each other. So that's something that I'm
+                                    very excited and passionate about.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>What catalyzed you to be part of
+                                    such an organization.</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Part of it is my
+                                    desire to help with that advancing
+                                    women in leadership women in technology, just that looking at how we can help the,
+                                    the broader people to bring in diverse ideas, because when you think about it
+                                    overall, when we try to solve different solutions for the world, especially in the
+                                    stem side a lot of times, if you look at solving solutions with people that are,
+                                    that only represent a certain segment of the society which potentially right now,
+                                    it's, you know, when you think about it, a lot of the decisions are being made by
+                                    male, right? So predominantly, you know, that particular segment of the society when
+                                    they make solutions. So when they look at solutions, it may not be comprehensive
+                                    enough such that those solutions may benefit certain groups at the expense of
+                                    others, but when you bring in DNI and how that intersects with stem and overall how
+                                    we solve the world's problems, then it is a more comprehensive solution such that
+                                    you will not have groups that become disadvantaged.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>So would you take any other
+                                    opportunities as like cater towards
+                                    inspiring others?</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Yes certainly, I think
+                                    of what I've done at at the
+                                    workplace, I have been instrumental in starting a lot of leadership programs and
+                                    that is my way of giving back to investing and develop and developing young talent.
+                                    So I was the, one of the founders of the engineering in training program at Telus,
+                                    or I would say instrumental in revamping it many years ago because I was part of
+                                    that program and having gone through that I wanted to make it better. At the same
+                                    time I've had, I've had started two or three other leadership development programs
+                                    at telus for either new hires or people trying to move from one particular job
+                                    profile to a different types of jobs. So I really see that I'm investing in,
+                                    developing in others is something that I'm very passionate about. And so that
+                                    doesn't only apply to the, the adult or the working world, but even for, for
+                                    students.
+                                    <br><br>
+                                    When I think about the importance of stem and overall investing in students and
+                                    young people in, in stem I see stem as a way to help break this cycle of poverty for
+                                    disadvantaged children. Because when you think about it disadvantaged families, the,
+                                    for the children to, to learn, they may not even have the tools and to be able to
+                                    help with and telus very good at providing a lot of these, you know, internet for
+                                    good, in terms of helping some of these disadvantaged families. And when you think
+                                    about how stem usually leads to better paying jobs that will help to break the cycle
+                                    of poverty for young children.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>That's very inspiring, that's a
+                                    lot of insightful experience you shared with us today. Thank you so much for coming
+                                    on Unlocking STEM.</p>
+                                <p class="text-md text-gray-900"><strong>Winnie Lai-Fong:</strong>Thank you. Love
+                                    chatting with you and good luck with your studies and your program as well.</p>
+
+                                <p class="text-md font-semibold text-gray-900">(Ending Music)</p>
+
+                            </div>
+                        </div>
+                        <div class="lg:w-1/4 lg:pl-8 mt-8 lg:mt-0">
+                            <div class="flex flex-col items-center">
+                                <img src="/assets/img/unlocking_stem/speakers/winnie_lai_fong.jpeg" width="250" height="250"
+                                    alt="Portrait of Winnie Lai-Fong" class="rounded-full mb-4">
+                                <p class="text-center text-md font-semibold">Winnie Lai-Fong</p>
+                                <button type="button"
+                                    onclick="window.location='https://www.instagram.com/tv/CKepcECn1wf/'"
+                                    class="inline-flex items-center rounded-md border-2 bg-white px-3 py-2 mt-2 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-white transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black-600">
+                                    Listen on Instagram
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="mt-10 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
+                        <p>&copy; 2024 Unlocking STEM, Millennium STEM BC. All rights reserved.</p>
+                        <p>Privacy Policy | Terms of Service</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 justify-center">
+            <div class="flex items-center grid-cols-1 gap-x-8 gap-y-16 justify-center">
+                <div class="max-w-xl lg:max-w-lg justify-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.
+                    </h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-300">To get early updates on our opportunities and
+                        events!</p>
+                    <div class="mt-6 flex max-w-md gap-x-4">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                            placeholder="Enter your email">
+                        <button type="submit" onclick="subscribeNewsletter()"
+                            class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+            <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Recognitions -->
+    <div class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm text-white select-none">
+                We would like to acknowledge that Millennium STEM BC is situated on the unceded territories of the Coast
+                Salish peoples—Sḵwx̱wú7mesh (Squamish), Stó:lō and Səl̓ílwətaɬ (Tsleil-Waututh), and xʷməθkʷəy̓əm
+                (Musqueam)
+                Nations, and we honour the many territorial keepers of the lands on which we work, seek to recognize and
+                address the systemic barriers that have historically restricted Indigenous peoples from pursuing success
+                in
+                STEM fields, thereby excluding critically valuable diverse perspectives. Funding scientific research,
+                and
+                preserving their cultures, languages, and traditions. Our work in diversifying STEM spaces is not
+                complete.
+                Decolonization is an ongoing process—we aim to elevate Indigenous voices in all of our initiatives, and
+                to
+                continually grow our understanding of how we can contribute to the reconciliation process.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative isolate overflow-hidden bg-gray-900">
+        <div class="mx-auto flex item-center max-w-7xl justify-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6" style="color: white;">
+                <!-- Instagram and Email -->
+                <button onclick="window.location='https://www.instagram.com/millenniumbc/'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="https://www.instagram.com/millenniumbc" class="text-white">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumbc</span>
+                    </div>
+                </button>
+                <button onclick="window.location='mailto:millenniumstem.bc@gmail.com'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="mailto:millenniumstem.bc@gmail.com" class="text-white">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumstem.bc@gmail.com</span>
+                    </div>
+                </button>
+                <!-- Divider -->
+                <div class="col-span-2 md:col-span-3">
+                    <hr class="border-gray-600 my-6">
+                </div>
+                <!-- Copyright -->
+                <div class="col-span-2 md:col-span-3 text-sm">
+                    &copy; 2024 Millennium STEM British Columbia
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+<script src="/assets/js/unlocking_stem.js"></script>
+
+</html>

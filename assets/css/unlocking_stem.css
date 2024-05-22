@@ -1,0 +1,8 @@
+p strong {
+    text-transform: uppercase;
+    padding-right: 4px;
+}
+
+p {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
