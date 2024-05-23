@@ -15,8 +15,9 @@ function search() {
                     const data = doc.data();
                     const title = data.title.toLowerCase();
                     const organization = data.organization.toLowerCase();
+                    const location = data.location.toLowerCase();
 
-                    if (title.includes(term) || organization.includes(term)) {
+                    if (title.includes(term) || organization.includes(term) || location.includes(term)) {
                         div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
                     }
                 });
