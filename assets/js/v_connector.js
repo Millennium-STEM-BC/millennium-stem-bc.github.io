@@ -72,6 +72,46 @@ function createOpportunityCard(title, organization, description, url, type, loca
 function triggerFilter(id) {
     // change button opacity
     document.getElementById(id).classList.toggle('opacity-50');
+    const div = document.getElementById('opportunity-cards');
+    div.innerHTML = '';
+
+    if (id == 'status') {
+        if (document.getElementById(id).classList.contains('opacity-50')) {
+            loadOpportunityCards();
+        } else {
+            db.collection('V_Connector').where('status', '==', 'Active').get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                })
+            })
+        }
+    } else if (id == 'location') {
+        if (document.getElementById(id).classList.contains('opacity-50')) {
+            loadOpportunityCards();
+        } else {
+            db.collection('V_Connector').where('location', '!=', 'N/A').get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                })
+            })
+        }
+    } else if (id == 'in person') {
+        if (document.getElementById(id).classList.contains('opacity-50')) {
+            loadOpportunityCards();
+        } else {
+            db.collection('V_Connector').where('type', '==', 'In Person').get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                    })
+                })
+        }
+    }
 }
 
 function loadOpportunityCards() {
