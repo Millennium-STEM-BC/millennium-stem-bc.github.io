@@ -3,29 +3,30 @@ let db = firebase.firestore();
 function search() {
     const term = document.getElementById('searchbar').value.toLowerCase();
     const div = document.getElementById('opportunity-cards');
-    div.innerHTML = ''; // Clear the current cards
+    div.innerHTML = '';
 
     if (term === '') {
-        // If the search bar is empty, load all the opportunity cards
         loadOpportunityCards();
     } else {
-        // Otherwise, load only the cards that match the search term
-        ['titleWords', 'organizationWords'].forEach(field => {
-            db.collection('V_Connector')
-                .where(field, 'array-contains', term)
-                .get()
-                .then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
+        db.collection('V_Connector')
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const title = data.title.toLowerCase();
+                    const organization = data.organization.toLowerCase();
+
+                    if (title.includes(term) || organization.includes(term)) {
                         div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error getting documents: ", error);
+                    }
                 });
-        });
+            })
+            .catch((error) => {
+                console.error("Error getting documents: ", error);
+            });
     }
 }
+
 
 function add(title, organization, description, url, type, location, status) {
     const titleWords = title.toLowerCase().split(' ');
@@ -51,7 +52,7 @@ function createOpportunityCard(title, organization, description, url, type, loca
                 <h3 class="text-lg font-bold">${title}</h3>
                 <p class="text-gray-600 font-semibold">${organization}</p>
                 <p class="text-gray-600 my-2 mr-16">${description}</p>
-                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span>
+                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><button onclick="if ('${location}' != 'N/A') window.location = 'https://maps.google.com?q=${location}';"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span></button>
             </div>
 
             <span class="sm:ml-3">
@@ -60,11 +61,16 @@ function createOpportunityCard(title, organization, description, url, type, loca
                     <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
               
-                    View
+                    Apply
                 </button>
             </span>
         </div>
     `;
+}
+
+function triggerFilter(id) {
+    // change button opacity
+    document.getElementById(id).classList.toggle('opacity-50');
 }
 
 function loadOpportunityCards() {
@@ -97,13 +103,10 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
 });
 
 function processCSV(text) {
-    // Split the text into lines and remove any leading/trailing whitespace
     const lines = text.split('\n').map(line => line.trim()).filter(line => line);
-    // Split the first line into headers
     const headers = lines[0].split(',').map(header => header.trim());
 
     lines.slice(1).forEach(line => {
-        // Use a regular expression to handle commas within quoted fields correctly
         const data = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g).map(field => field.trim());
 
         if (data.length === headers.length) {
@@ -111,7 +114,6 @@ function processCSV(text) {
 
             headers.forEach((header, index) => {
                 let value = data[index];
-                // Remove any leading and trailing quotation marks from the description field
                 if (header === 'description') {
                     value = value.replace(/^"+|"+$/g, '');
                 }

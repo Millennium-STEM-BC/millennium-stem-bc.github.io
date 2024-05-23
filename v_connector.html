@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/v_connector.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
     <!-- Firebase -->
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <section class="py-16" style="background-color: #F4F3EF;">
+    <!-- <section class="py-16" style="background-color: #F4F3EF;">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2">
                 <h1 class="text-4xl md:text-5xl font-bold text-teal-700">The #1 Database of Internships for High School
@@ -51,7 +51,41 @@
                 <img src="/assets/img/v_connector/removed-home_design.png" width="500">
             </div>
         </div>
+    </section> -->
+
+    <section class="py-16 hero-background">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5">
+                <h1 class="text-4xl md:text-5xl font-bold text-white">The #1 Database of Internships for High School
+                    Students</h1>
+                <p class="mt-4 text-gray-300">Connecting youth with exclusive STEM volunteer opportunities and
+                    empowering the next generation of innovators.</p>
+            </div>
+            <!-- <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                <img src="/assets/img/v_connector/removed-home_design.png" width="500">
+            </div> -->
+        </div>
+
+        <div class="container mx-auto px-4 items-center pt-10">
+            <h2 class="text-2xl font-bold text-gray-200">Want to contribute?</h2>
+            <p class="mt-2 text-gray-400 mb-2">Upload your opportunities list (.csv) here!</p>
+
+            <form id="csvForm">
+                <div class="flex items-center  mx-auto mt-4">
+                    <input
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        aria-describedby="file_input_help" id="csvFile" type="file" accept=".csv">
+                    <div class="w-2"></div>
+
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                </div>
+                <p class="mt-1 text-sm text-gray-400 dark:text-black-300 mb-5" id="file_input_help">Accepted filetypes:
+                    CSV</p>
+            </form>
+        </div>
     </section>
+<!-- 
 
     <section class="container mx-auto px-4 py-4 pt-4">
         <h2 class="text-2xl font-bold text-teal-700">Want to contribute?</h2>
@@ -59,21 +93,25 @@
 
         <form id="csvForm">
             <div class="flex items-center  mx-auto mt-4">
-                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="csvFile" type="file" accept=".csv">
+                <input
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    aria-describedby="file_input_help" id="csvFile" type="file" accept=".csv">
                 <div class="w-2"></div>
-                
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-            </div>
-            <p class="mt-1 text-sm text-gray-500 dark:text-black-300 mb-5" id="file_input_help">Accepted filetypes: CSV</p>
-        </form>
-    </section>
 
-    <section class="container mx-auto px-4 py-4">
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </div>
+            <p class="mt-1 text-sm text-gray-500 dark:text-black-300 mb-5" id="file_input_help">Accepted filetypes: CSV
+            </p>
+        </form>
+    </section> -->
+
+    <section class="container mx-auto px-4 pt-6">
         <h2 class="text-2xl font-bold text-teal-700">Search Filters:</h2>
         <p class="mt-2 text-gray-700">We recommend you search for opportunities on a computer for the best experience.
         </p>
         <!-- Search bar -->
-        <div class="flex items-center mx-auto mb-10 mt-4">
+        <div class="flex items-center mx-auto mt-4">
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-full">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -95,6 +133,20 @@
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
                 <span class="sr-only">Search</span>
+            </button>
+        </div>
+
+        <div class="container mx-auto items-center pt-2 pb-10">
+            <button class="opacity-50" id="active" onclick="triggerFilter(this.id)">
+                <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-sm font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">Active</span>
+            </button>
+
+            <button class="opacity-50" id="type" onclick="triggerFilter(this.id)">
+                <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Type</span>
+            </button>
+
+            <button class="opacity-50" id="location" onclick="triggerFilter(this.id)">
+                <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Location</span>
             </button>
         </div>
     </section>

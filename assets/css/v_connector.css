@@ -1,0 +1,9 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/img/v_connector/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+}
