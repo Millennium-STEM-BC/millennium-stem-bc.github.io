@@ -1,0 +1,596 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium STEM BC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/stemcon_2024.css" />
+    <link rel="stylesheet" href="/assets/css/unlocking_stem.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="/assets/js/helpers/add_to_calendar_btn.js" async defer></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="assets/js/firebase_init.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="/index.html">
+                <div class="text-lg font-semibold">Millennium STEM BC</div>
+            </a>
+            <div class="space-x-4 text-black">
+                <a href="/our_team.html" class="text-black-600 hover:text-blue-800 font-semibold">Our Team</a>
+                <a href="/v_connector.html" class="text-black-600 hover:text-blue-800 font-semibold">Volunteer
+                    Connector</a>
+                <a href="/stemcon_2024.html" class="text-black-600 hover:text-blue-800 font-semibold">StemCon 2024</a>
+                <a href="/unlocking_stem.html" class="text-black-600 hover:text-blue-800 font-semibold">Unlocking
+                    STEM</a>
+                <a href="/past_initiatives.html" class="text-black-600 hover:text-blue-800 font-semibold">Past
+                    Initiatives</a>
+                <button type="button"
+                    onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=sf_link'"
+                    class="inline-flex items-center rounded-md border-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 hover:scale-105 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join
+                    our mailing list
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-background py-32 text-center text-white">
+        <h1 class="text-8xl font-bold mb-4">Unlocking STEM</h1>
+        <h2 class="text-4xl italic font-bold mb-4">Speaker series</h2>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-12">
+        <div class="bg-white p-8 shadow-md">
+            <div class="container mx-auto px-4 py-4">
+                <!-- Transcripts -->
+                <div>
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-3/4">
+                            <h1 class="text-2xl font-bold mb-4">Unlocking STEM Episode 3: Astronomy with Maaike van
+                                Kooten!</h1>
+                            <p class="text-sm text-gray-600 mb-2">Interview with Maaike van Kooten</p>
+                            <p class="text-sm text-gray-600 mb-4">Host: Anders Lee, Sophie</p>
+                            <div class="space-y-4">
+                                <p class="text-md font-semibold text-gray-900">(Intro Music)</p>
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Hi, thank you so much for coming.
+                                    I’m Anders Lee, and I’m the co-finance and sponsorship director on the Millennium
+                                    STEM executive team, and this is Sophie, the co-chair of Millennium STEM BC. I’d
+                                    just like to ask you a few questions about yourself and STEM. To start off, could
+                                    you please tell me a little bit about yourself?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Well, it’s nice to
+                                    meet you both. My name is Maaike, I’m one of four daughters—so I grew up in an
+                                    all-girls home in British Columbia for the most part. We did move around a lot,
+                                    growing up, but yeah—basically Vancouver, Richmond, and also on Vancouver Island.
+                                    Growing up, my dad was a [professor] in Economics so I was very familiar with being
+                                    at a university. On the weekends we would go to the campus, go for coffee, go to
+                                    bookstores, so it was a very familiar place for me to be—a university. I’m also
+                                    married, I got married between my two graduate degrees, and so I’ve been able to do
+                                    graduate school thanks to a very supportive husband who’s been really—I’ve been
+                                    really fortunate in terms of, he’s allowed my career to be a priority in our
+                                    relationship. And I guess on a professional level, I’m a researcher in Astronomy,
+                                    specifically in Astronomy Instrumentation.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Alright, thank you so much. Now
+                                    can you tell us a bit about your education and your STEM experience? Just elaborate
+                                    on that a bit further.</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yeah, of course. So
+                                    I grew up going to public school, and I went to do my undergrad in Physics and
+                                    Astronomy at the University of Victoria in Canada. And I did a four-year
+                                    undergraduate degree. During this period I wasn’t part of the co-op program, but I
+                                    did do co-ops, so I did three co-op terms. I think to get an official designated
+                                    co-op degree it required four. And during these co-ops I worked at the National
+                                    Research Council of Canada, which is also in Victoria, and it’s an observatory where
+                                    they do science but they also build instruments for astronomy. And then I went on to
+                                    do a master’s degree, and I actually did it in applied science in Mechanical
+                                    Engineering at the University of Victoria. Finally I went to pursue a Ph.D and I did
+                                    that in Astrophysics at Leiden University in the Netherlands.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>How would you say that co-op
+                                    experience affected your STEM journey?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Oh, it definitely
+                                    had a major impact for me. So I knew I was always interested in STEM, I was always
+                                    interested in tech and science, biology, chemistry, physics—I loved math. And, you
+                                    know, physics and math were a bit more difficult for me, and I actually really liked
+                                    the challenge of that, and that’s kind of how I went into a physics degree and math
+                                    degree because it was something I really enjoyed but it wasn’t until I did a co-op
+                                    that I could see a career in STEM. So my first co-op was—you know, you would just
+                                    apply to these different jobs that were available, you’d see like, this one sounds
+                                    interesting, and I ended up being a telescope tour guide and working with the public
+                                    at the observatory—also working on science programs for kids, and summer camps, and
+                                    doing public observing: so on a Friday and Saturday night people would come and you
+                                    would observe with them through a 1-Meter class telescope. And that environment also
+                                    exposed me to the other people that worked there that were actual researchers in
+                                    science, in astronomy, but also the engineers that were working there. I was able to
+                                    do two more co-op terms there: the first one I did a pure science one, so I was kind
+                                    of analyzing astronomy data, and then over lunch and coffee with the different
+                                    people there, I realized there was an engineering side to this. Something where you
+                                    could build and design instruments and push technology to come up with new ways of
+                                    measuring things that would allow astronomers to have new tools and they could make
+                                    new discoveries through those tools. I was like, “oh, this is awesome,” like “I
+                                    really like the idea that you can be in science and be in this space of research but
+                                    also be doing something hands-on.” And so that is why for my third co-op term I was
+                                    able to connect with somebody who was working in the optics lab there, so I worked
+                                    with fiber optics and figured out how to polish them and get them working for
+                                    specific instruments they were building. Through my co-op terms I went from being
+                                    like, “This is something I really enjoy, this is something cool” to really seeing
+                                    all the different career aspects that you could have and you could see it as
+                                    somewhere I could pursue an actual career.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Alright, great. I’ll just quickly
+                                    go back to the education piece: I just want to know about the difference you’ve
+                                    noticed with European universities and why you specifically chose to study in the
+                                    Netherlands.</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yeah! So I was
+                                    looking specifically for a place that really fostered astronomy instrumentation.
+                                    It’s kind of this niche area where you need to have that engineering background, so
+                                    you need exposure to mechanical, electrical engineering, some software, and you also
+                                    need to be understanding the current research that’s being done in astronomy and
+                                    astrophysics, so you kind of need to be on both sides of the engineering and pure
+                                    science. There aren’t that many departments that offer grad programs that allow for
+                                    you to have the experience and the exposure to both of these things, and cultivate
+                                    that in you. I always knew that Leiden University had a specific group that did
+                                    this, and so I kind of wanted to be there and to be part of that. I guess also I am
+                                    Dutch as well, so I’m Dutch-Canadian, and so it made it much more—it made it less
+                                    scary, the concept of moving to Europe and to another country to pursue a degree.
+                                    It’s very different there. So the first thing is as a grad student or as a PhD
+                                    student you have to come in with a master’s degree. You can’t come into their grad
+                                    program without a master’s. Versus like in Canada, you can go into a graduate
+                                    program and you start off in your master’s and it’s very common to do a transfer—so
+                                    you continue with the same group that you’re working with, and it transfers and
+                                    becomes your PhD program. But there they want [those] two distinct degrees. You’re
+                                    also a government employee there, so all PhDs in STEM are paid the same no matter
+                                    what university you go to—you get benefits, so it’s very transparent from that point
+                                    of view. Then the other side of it is, I guess, specifically Dutch society is less
+                                    hierarchical. So very much you’re viewed as a collaborator. At the beginning you’re
+                                    maybe someone who’s more in training, and your supervisor is definitely more guiding
+                                    you, but then eventually they really take it to be that by your second and third
+                                    year you’re driving your research and you’re more a collaborator or a co-creator
+                                    with your supervisor towards the end project or research that you have. So it really
+                                    allows for you to take on responsibility sooner and it helped me grow in that
+                                    aspect. I think from just having friends in the Canadian system, it was more
+                                    hierarchical, where they were always kind of below their principal investigator,
+                                    their supervisor, but that really depends personally on the individual, the group,
+                                    and the university.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much for telling us
+                                    that, Maaike. One thing that we also wanted to expand upon was encouraging youth to
+                                    participate in STEM, and how would you go about encouraging you to get involved in
+                                    STEM, or any opportunities in particular like co-op that youth could do?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>So I guess, youth do
+                                    you mean undergrads or high schoolers?</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>High schoolers like us, yeah.</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Okay, high
+                                    schoolers. This is a very challenging question, but I think like—taking from the
+                                    point of view of astronomy, if this is something that interests you, there’s the
+                                    Royal Astronomical Society—so there’s usually different societies or different clubs
+                                    that will participate in different aspects of STEM. So the Royal Astronomical
+                                    Society, they come every single Friday and Saturday night—or they used to, they set
+                                    up their own telescopes and do public observing. And as a co-op student, I was
+                                    interacting with them, and I found I learned so much from just speaking to them.
+                                    They had so much knowledge and—yeah, it was just so wonderful being part of that
+                                    community and getting to experience it. I highly recommend if there’s a club or
+                                    society, that’s a really good way in because the people there will be able to foster
+                                    your interest. I also—you know, I helped with some summer schools and they’re more
+                                    geared towards undergrads as well, but I think there are ones out there that are for
+                                    high schoolers, but if you can get experience—especially in STEM, in physics or
+                                    astronomy or engineering—having programming experience, I think that’s something
+                                    where there’s a lot of online courses that will let you learn Python and stuff. So
+                                    doing those types of things helps you to have—changes your way of thinking and
+                                    teaches you how to problem-solve in a way that’s super useful for pursuing STEM, but
+                                    it also is something that is, you know, if anyone has a computer they can learn
+                                    these things, so it’s very accessible. I guess another thing is there are now
+                                    programs out there that do citizen science, and I think this was an astronomy thing
+                                    where we had so much data that we couldn’t all look at it, so we actually asked
+                                    volunteers to look at it, so I think like Galaxy Zoo is something, and I think other
+                                    fields like biology and chemistry have now taken on this model where you can be
+                                    involved from anywhere in the world, no matter your age, you can be participating in
+                                    it. Some of these things have even led to members of the public being on papers and
+                                    stuff because they’ve discovered really cool things and they’ve connected with
+                                    scientists in that way. I think with the Internet and social media, there’s lots of
+                                    ways to connect and if anyone’s interested in connecting with astronomy, they can
+                                    reach out to me, I guess, and I’ll help them.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much. You mentioned
+                                    that part about being really accessible and open to anyone around the world. So how
+                                    do you think intersectionality plays into STEM?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Oh, I think
+                                    it’s—okay, for myself I think we definitely need to continue to make room in STEM
+                                    for everyone to bring their full identities into STEM. I think that’s super
+                                    important, and I think it really allows for us to have more fun doing STEM, but also
+                                    to come up with creative solutions as people come from different backgrounds and
+                                    different points of view and they interpret data differently, they see solutions
+                                    differently. So I think STEM is going to be a better environment when we have more
+                                    people and we have more diversity and everyone feels comfortable and welcome in such
+                                    situations. Does that answer your question fully?</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Yes, thank you so much. Also,
+                                    just going back to your career now—what do you think is the most groundbreaking
+                                    discovery you’ve made, either scientifically or about yourself, and why?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>I think the most
+                                    groundbreaking is about myself. I’m too early in my career to have done necessarily
+                                    impactful, groundbreaking things for my field. But I think one of the biggest things
+                                    was kind of this idea of imposter syndrome or always thinking of the ideas I have,
+                                    being young or relatively new in a field, that someone’s had this idea before or
+                                    this question isn’t a good question, or these different things. You may feel really
+                                    unsure or feel like you don’t belong. I think just taking part in different
+                                    committees that I have to be on and different things that are part of my job, I’ve
+                                    really had this opportunity to see my own questions and thoughts be validated. So
+                                    for example, I take part in time allocation committees, so this is where, in
+                                    astronomy you write a proposal, and a group of peers is going to say if it's worth
+                                    time on a telescope or not. This was a very terrifying thing for me to start out
+                                    doing. My first time doing it I was thinking, “how am I supposed to judge someone
+                                    else’s science and their work?” And so being in a committee setting with many people
+                                    from different experience levels and backgrounds, I was able to see internally, “I
+                                    have these questions,” or “I have this initial reaction to this,” or whatnot. And
+                                    see that being validated and basically seeing like, hey, actually everyone else in
+                                    the room agreed with that or had that thought. And that allows for me to speak up
+                                    more, and really say—hey, I belong here, my questions and opinions matter, and I
+                                    don’t need to earn that, but I can just come up and say those things. I think on a
+                                    personal level, tackling that imposter syndrome over the last few years.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much for sharing
+                                    that with us. Okay, so in the present moment, what kind of work are you doing in
+                                    your field?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yep. So I work in a
+                                    very niche field called Adaptive Optics, and so Adaptive Optics is, I guess—when you
+                                    look at a star, you see that a star twinkles. And this is actually due to turbulence
+                                    in our atmosphere, so the air blowing around actually causes the twinkling of stars.
+                                    An astronomer, when they want to take a picture of a star—and from that picture we
+                                    can extract information—that twinkling basically is the same thing as you taking a
+                                    photo and your hand shaking, and your picture is going to get blurry. So that’s
+                                    what’s happening, is the turbulence is kind of shaking the star and we get a blurry
+                                    image. Adaptive optics is us correcting for atmospheric turbulence in real-time.
+                                    What we do is we measure what the turbulence is doing in the atmosphere, and we have
+                                    a mirror that is really really thin and also really small, about the size of a
+                                    quarter, and we shrink the light down onto that mirror and the mirror changes shape,
+                                    so it can change shape and become like, a potato chip or whatever you want. We can
+                                    actually cancel out the effects of turbulence using this mirror, and it has hundreds
+                                    to thousands of things on the backs of the mirror that we can push and pull. We can
+                                    do this up to thousands of times per second. I work on pushing this technology even
+                                    further: improving it for the application of directly imaging planets outside our
+                                    solar system. So we want to take pictures of planets that are next to really bright
+                                    objects—we have to provide a really stable correction and completely remove the
+                                    effects of turbulence. I work on improving the different aspects of the technology.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Alright, thank you. I was
+                                    thinking—does the hesitancy of iconoclasm affect progress from happening. So, for
+                                    example, Cecilia Payne introducing her groundbreaking thesis on how stars were
+                                    composed and how they needed hydrogen and helium, and her thesis getting immediately
+                                    rejected—do you think that affects the field of astronomy and how so?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>So I think there’s
+                                    kind of two sides to that. So I guess in the theoretical side of astronomy, for
+                                    sure, I think there’s some tension when you challenge something that is assumed.
+                                    And, you know, you have also different personalities involved, and you have
+                                    seniority and hierarchy and stuff, but on the—one thing I really like about my side
+                                    is that in instrumentation, where we are kind of trying to push it, we need those
+                                    new ideas. We thrive off of that. We need somebody to be like “hey, let’s try this
+                                    crazy thing,” and so we all get very excited about that. I’d like to think as a
+                                    community, the astronomy instrumentation specifically—the adaptive optics
+                                    community—is very open to these rocking-the-boat kind of ideas and we really like
+                                    that. We recognize that’s how we’re going to push technology and push the direction,
+                                    and get instruments that allow the scientists to do crazier, better science. I think
+                                    in instrumentation it’s slightly less of a problem.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Okay, thank you so much. Just
+                                    talking about—I don’t know—what is the biggest challenge that you’ve experienced in
+                                    your career or in your life so far?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>I don’t know. I’ll
+                                    pick a recent one. It’s actually—it feels like it’s the biggest challenge right now.
+                                    Sometimes the ones that are the most recent are fresh in your memory so you feel
+                                    like they are the biggest. On Sunday and Monday, actually, I was commissioning—so
+                                    that means installing and testing and getting the first time light passes through a
+                                    new camera on a telescope about a two-hour drive from here, and you know, we thought
+                                    we had thought about everything, we had talked to all the people and then on Sunday,
+                                    we had it installed, and everything was working, and we went for dinner. We came
+                                    back from dinner and things weren’t working the way we thought it was! And it was
+                                    actually a network, so a communication—how we were talking to the computers and
+                                    whatnot—and this actually resulted in Sunday night, we weren’t really able to
+                                    observe, and it took about twenty-four hours to actually solve this and so you’re
+                                    basically on the mountain, scrambling to try and fix this, you’re trying to call
+                                    people who you think can help you, but you’re also alone in terms of—in the end, you
+                                    have to figure out how to get it to work. Despite spending three hours on Zoom the
+                                    next day with different IT experts and software engineers to help troubleshoot this,
+                                    they weren’t able to help me, and it wasn’t until breaking again for lunch and
+                                    spending a few more hours working on it that we had the undergrad I was working
+                                    with—we were about to give up, and then we had a crazy idea, “what happens if we do
+                                    this?” and that kind of solved it. In that moment, that twenty-four hours, feeling
+                                    the pressure of ‘it has to happen Monday or we won’t get a chance to get this to
+                                    work again,’ and then having the difficulty where you don’t really understand, I’m
+                                    not an expert in networking, so you’re just trying to come up with solutions.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>So how did that collaboration
+                                    help with your process, and just in general collaboration?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Collaboration is a
+                                    huge part of my job. Everything I do is in collaboration: I get to collaborate with
+                                    all types of engineers and scientists, so, you know, on a weekly basis, interacting
+                                    with mechanical, electrical, software engineers a lot, and then also collaborating
+                                    with grad students and undergrad students. This past summer I was mentoring—the last
+                                    two summers I’ve been mentoring an undergrad college transfer student, and it really
+                                    teaches me how to break down tasks. Sometimes, you know, you get used to your own
+                                    work but you have to be able to explain what you need done to other people, and you
+                                    have to be able to break it down into smaller components and milestones. Especially
+                                    working with an undergrad to make those manageable, and to help someone through time
+                                    management, but also to make sure you’re being super clear in the goal and how to
+                                    get there, and the motivation for why we’re doing this—that’s super important. I
+                                    think it’s really fun to collaborate and work with other people, but it really keeps
+                                    me—communication skills have to be good, you have to really value the people you’re
+                                    collaborating with, their time is really important, so you don’t want to waste their
+                                    time. You really want to treat your engineers, your professionals, really well, so I
+                                    think communicating clearly and also communicating your appreciation to them is
+                                    something that really allows for collaboration to thrive.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Based on that—giving positive
+                                    feedback, and just giving them good experiences, was there a particular mentor that
+                                    helped you during your studies or your career?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yes. So actually I
+                                    have a few, but specifically that very first co-op job that I took. My boss that
+                                    hired me, essentially, it turned out his partner at the time—or wife, now—she was
+                                    also a researcher in the exact same field as me. Kind of the two of them have been
+                                    people that I can talk to and speak to and actually ask for advice on a career side
+                                    and all these different things. They have been a couple that’s been supportive of me
+                                    but also being people that I can speak to and voice concerns or ask for direction,
+                                    and I can really trust what they’re saying to me. Always when you’re going through
+                                    grad school you have advisors, so people that are directly guiding research and
+                                    trying to teach you how to do research. Hopefully you have a good relationship with
+                                    them, and I was very lucky that I did in my cases, and so those were definitely
+                                    people that are mentors to me whether it’s teaching me how to write better, teaching
+                                    me the scientific process—how do you tackle a question, how do you solve it for the
+                                    first time, how do you ask good questions—all these different things that have been
+                                    taught to me by mentors.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Okay—for those who are uncertain,
+                                    they don’t even have a mentor in the first place, what would you say to them: they
+                                    want to pursue STEM, but they’re not entirely sure what to do?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yeah, so I think the
+                                    very first thing is at least being—when you get to university it’s a lot easier,
+                                    because you’re going to have profs that are teaching you in all these different
+                                    things—don’t be scared to go up to people. I think you’ll hear when you have a
+                                    teacher that you really like, don’t think you’re not worth reaching out to them. If
+                                    you think you’re like, “oh, this person, I really like how they explain things” but
+                                    maybe you also hear about their research or things you’re interested in, they might
+                                    have office hours or opportunities where if you’re in someone’s class, you’ll be
+                                    able to go meet with them. They’re kind of an open-door policy where you can come
+                                    and ask questions. Often you assume that it’s with the course material. You can
+                                    [also] go and ask about their research or anything, and also sending emails to
+                                    people and saying like, “hey can I meet,” but give them sufficient information and
+                                    background and motivate why you’re reaching out to them, but I think, like, every
+                                    time someone’s reached out to me I don’t react negatively, it’s really nice, it’s an
+                                    honour, and I either say that I unfortunately don’t have time but reach out to this
+                                    person, or talk to this person—you know, communicate with them. I think that’s
+                                    something. It can be scary to think about, but don’t worry about that. Find clubs at
+                                    universities or maybe at your current high school and your own teachers at high
+                                    school, like they went and did degrees somewhere, so they have a lot of knowledge
+                                    and connections as well. Don’t feel pressured to have to figure it out. I definitely
+                                    didn’t go into my undergrad knowing what was going to be on the other side of
+                                    finishing my undergrad, and sometimes we put a lot of pressure, when you start in
+                                    first year, that you’ve made your decision, and that’s the direction you’re going to
+                                    go. But don’t be scared to take other classes or to go out of your comfort zone, or
+                                    to change something: changing a degree, or even taking a break from something—that’s
+                                    not failure, that’s just you understanding yourself well and actually realizing
+                                    things sooner than later. I don’t know if that fully answers the question.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>No that’s okay, you answered it,
+                                    thank you so much. Referring back to that night where you had to fix the telescope,
+                                    and that intense situation—would you say astronomy is usually a high-pressure field
+                                    and how do you cope with that amount of pressure?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yes, so there are
+                                    periods where it’s very high-pressure, but I think especially in academia, so being
+                                    kind of in the—right now I’m a postdoctoral researcher at the University of
+                                    California Santa Cruz, and after your PhD you can try and go into industry, maybe,
+                                    or if you want to continue in research you might want to find a position at a
+                                    government research facility, or a lab, or something, but oftentimes between getting
+                                    your PhD and kind of making that next step there’s this temporary position which I’m
+                                    in. That’s very much a high-pressure situation because they are temporary contracts,
+                                    and you often want to produce results, and the way that we measure results, at least
+                                    in science, is through peer-reviewed papers. Astronomy is definitely one of the
+                                    fields—sub-fields are slightly different within astronomy, but there’s definitely [a
+                                    culture of] “you should be publishing” and that creates your value within the field.
+                                    In instrumentation it’s very hard to publish because you’re not necessarily doing.
+                                    You’re building something, and that’s not always a paper that’s novel. It’s really
+                                    hard to balance that, so from that point of view, where your value or your worth is
+                                    sometimes measured in these peer-reviewed papers, that can be a very stressful
+                                    thing. And then when you have deadlines, when you’re putting something on a
+                                    telescope, that’s also a lot of stress because you will have a certain number of
+                                    nights: you get this amount of time with the telescope and if you don’t finish it in
+                                    that period of time, it’s over. But otherwise, on a day-to-day basis, my goals for
+                                    what I want to do for the day and all these different things, it’s much slower and
+                                    much less pressure because I’m creating my own schedule, I’m putting on my own
+                                    pressure, so it’s very self-driven from that point of view. All the projects and how
+                                    quickly I move through them—my boss might have some demands, but usually it’s very
+                                    collaborative to figure out deadlines and stuff. A lot of the deadlines are
+                                    self-imposed. But of course you just want to have good performance, so the quicker
+                                    you can do things, the more things you can do, and then the more papers you can
+                                    write, so the better you can appear on paper, kind of. You just have to balance it:
+                                    you have to see value in other things besides your life in STEM. I have to see value
+                                    in my family, in the extracurricular activities I like to do, and I just have to say
+                                    “no.” You have to just say “actually, I want to have a life outside of my job,” and
+                                    saying 9-5 and then maybe on the Sunday and Monday, that was one of the extreme
+                                    circumstances where I was trying to install something so I worked more hours and
+                                    I’ll take more breaks this week, to balance it out and keep a work-life balance.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Alright, thank you. And what do
+                                    you say inspires you or excites you about the field of astronomy?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Oh, I think just
+                                    like—understanding what’s happening up there. I’ve always been in awe and wonder of
+                                    nature and everything. From a young age, I—when I was in Grade 6 I was in French
+                                    immersion, and our French immersion teacher, over Christmas, because we were doing
+                                    science in French as well—this was the first year I was in French immersion. He said
+                                    “when we come back from Christmas break, everyone is going to take turns teaching
+                                    the class on a topic they chose.” So [we] got to prepare a lecture. And I think at
+                                    that time there were kind of words in the news about nuclear [fission] and how
+                                    that’s the future, and I discovered that the sun was doing nuclear [fusion], and I
+                                    was like “this is the coolest thing ever!” So I went and did my project on the life
+                                    cycle of stars, and I think just the amazement and wonder that I had over what was
+                                    happening inside of stars, and how many stars there are up there—that really drives
+                                    it. The beauty of it all really drives it for me.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Okay. And I think—I don’t know,
+                                    Sophie, one more question? Or how many? </p>
+                                <p class="text-md text-gray-900"><strong>Sophie [V.O]:</strong>You can ask as many
+                                    questions as you want. I did actually have my own question: I was wondering—I don’t
+                                    know too much about astronomy, but I was wondering if light pollution and other
+                                    issues from things like climate change and large amounts of population kind of
+                                    affect your work, or sort of impede it in any way?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Yeah, those are
+                                    really good questions. So light pollution is a huge deal in astronomy. For example,
+                                    some of the smaller telescopes that maybe you’ve seen, depending on where you’ve
+                                    travelled to—so I think the telescope I’m working on is just outside of San Jose,
+                                    the Bay Area, or Silicon Valley. That one definitely has—you see light pollution and
+                                    that limits how faint we can go, or how faint of a star we can look at. Some
+                                    observatories have gone from something that is used for science to not being used
+                                    for science because of light pollution. So we really like dark skies, it’s really
+                                    important for astronomy, and then climate change: that’s something we’re trying to
+                                    understand a bit more. One of my interests is not only “how do we correct for
+                                    turbulence” but “how do we describe turbulence for astronomy?” and “how do we know
+                                    what’s happening in our atmosphere?” I’ve kind of been trying to look at, “can we
+                                    see a trend in the amount of turbulence in our air?” There was a Nature paper, a few
+                                    years ago, that was looking at planes travelling from North America to Europe, and
+                                    they found that you would experience more turbulence—the plane bouncing around. You
+                                    would also potentially see that it would require more fuel to do that trans-Atlantic
+                                    flight. They’re starting to notice that trend and that’s due to climate change and
+                                    turbulence. That was like “oh, what’s happening in astronomy then?” because we care
+                                    about turbulence too. It’s a slightly different kind of turbulence. We’re trying to
+                                    understand that, but we need more data to do that, and so we think it’s a big deal,
+                                    but we don’t fully understand it yet in astronomy.</p>
+
+                                <p class="text-md text-gray-900"><strong>Sophie [V.O]:</strong>Okay, I think that’s it
+                                    for our questions—Anders, do you have any more questions?</p>
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Sure, I was just going to jump in
+                                    with this question: what do you want your legacy to be?</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Oh, my legacy! I
+                                    guess for me, it’s very interpersonal. I just really hope that the people I work
+                                    with and the students that I get to work with, that they have a really fun time,
+                                    that they learn a lot but they also learn about themselves. And that at some point,
+                                    they gain maybe one useful skill from interacting with me! Then, you know, on a more
+                                    professional level, it would be really cool to have an instrument that enables new
+                                    science. So to really build something that astronomers can do something new with,
+                                    and yeah, I think in the next few years, I hope that will be a reality.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Okay. I think that concludes the
+                                    interview. I just want to thank you for coming to this today, and thank you so much
+                                    for coming on Unlocking STEM!</p>
+                                <p class="text-md text-gray-900"><strong>Maaike van Kooten:</strong>Thank you both for
+                                    having me! It was nice to meet you both.</p>
+
+                                <p class="text-md font-semibold text-gray-900">(Ending Music)</p>
+
+                            </div>
+                        </div>
+                        <div class="lg:w-1/4 lg:pl-8 mt-8 lg:mt-0">
+                            <div class="flex flex-col items-center">
+                                <img src="/assets/img/unlocking_stem/speakers/maaike_van_kooten.jpeg" width="250"
+                                    height="250" alt="Portrait of Maaike van Kooten" class="rounded-full mb-4">
+                                <p class="text-center text-md font-semibold">Maaike van Kooten</p>
+                                <button type="button"
+                                    onclick="window.location='https://www.instagram.com/tv/CKepcECn1wf/'"
+                                    class="inline-flex items-center rounded-md border-2 bg-white px-3 py-2 mt-2 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-white transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black-600">
+                                    Listen on Instagram
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="mt-10 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
+                        <p>&copy; 2024 Unlocking STEM, Millennium STEM BC. All rights reserved.</p>
+                        <p>Privacy Policy | Terms of Service</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 justify-center">
+            <div class="flex items-center grid-cols-1 gap-x-8 gap-y-16 justify-center">
+                <div class="max-w-xl lg:max-w-lg justify-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.
+                    </h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-300">To get early updates on our opportunities and
+                        events!</p>
+                    <div class="mt-6 flex max-w-md gap-x-4">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                            placeholder="Enter your email">
+                        <button type="submit" onclick="subscribeNewsletter()"
+                            class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+            <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Recognitions -->
+    <div class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm text-white select-none">
+                We would like to acknowledge that Millennium STEM BC is situated on the unceded territories of the Coast
+                Salish peoples—Sḵwx̱wú7mesh (Squamish), Stó:lō and Səl̓ílwətaɬ (Tsleil-Waututh), and xʷməθkʷəy̓əm
+                (Musqueam)
+                Nations, and we honour the many territorial keepers of the lands on which we work, seek to recognize and
+                address the systemic barriers that have historically restricted Indigenous peoples from pursuing success
+                in
+                STEM fields, thereby excluding critically valuable diverse perspectives. Funding scientific research,
+                and
+                preserving their cultures, languages, and traditions. Our work in diversifying STEM spaces is not
+                complete.
+                Decolonization is an ongoing process—we aim to elevate Indigenous voices in all of our initiatives, and
+                to
+                continually grow our understanding of how we can contribute to the reconciliation process.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative isolate overflow-hidden bg-gray-900">
+        <div class="mx-auto flex item-center max-w-7xl justify-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6" style="color: white;">
+                <!-- Instagram and Email -->
+                <button onclick="window.location='https://www.instagram.com/millenniumbc/'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="https://www.instagram.com/millenniumbc" class="text-white">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumbc</span>
+                    </div>
+                </button>
+                <button onclick="window.location='mailto:millenniumstem.bc@gmail.com'">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <a href="mailto:millenniumstem.bc@gmail.com" class="text-white">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                        <span class="text-sm">millenniumstem.bc@gmail.com</span>
+                    </div>
+                </button>
+                <!-- Divider -->
+                <div class="col-span-2 md:col-span-3">
+                    <hr class="border-gray-600 my-6">
+                </div>
+                <!-- Copyright -->
+                <div class="col-span-2 md:col-span-3 text-sm">
+                    &copy; 2024 Millennium STEM British Columbia
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+<script src="/assets/js/unlocking_stem.js"></script>
+
+</html>
