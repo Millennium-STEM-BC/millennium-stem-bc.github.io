@@ -1,4 +1,5 @@
 let db = firebase.firestore();
+let auth = firebase.auth();
 
 async function fetchResponses() {
     try {
@@ -45,6 +46,24 @@ function downloadResponses(content, name) {
 }
 
 window.onload = async () => {
-    const csvContent = await fetchResponses();
-    downloadResponses(csvContent, 'responses');
+    auth.onAuthStateChanged(async user => {
+        if (user) {
+            db.collection('Users').doc(user.uid).get()
+                .then(async (doc) => {
+                    if (doc.exists) {
+                        const data = doc.data();
+
+                        if (data.isAdmin) {
+                            const csvContent = await fetchResponses();
+                            downloadResponses(csvContent, 'responses');
+                        } else {
+                            alert('You do not have permission to access this page.');
+                            window.history.back();
+                        }
+                    }
+                })
+        } else {
+            window.location = '/signin.html?redirect=/helpers/v_connector_export_responses.html';
+        }
+    })
 }
