@@ -3,7 +3,7 @@ let db = firebase.firestore();
 async function fetchResponses() {
     try {
         const response = await db.collection('V_Connector_Contribute_Responses').get();
-        const csvHeaders = ['url', 'firstname', 'lastname', 'email', 'organization', 'title', 'status', 'type', 'description', 'street', 'city', 'province', 'postal_code'];
+        const csvHeaders = ['url', 'firstname', 'lastname', 'email', 'organization', 'title', 'status', 'type', 'description', 'street', 'city', 'province', 'postal_code', 'csvURL'];
         let csvContent = csvHeaders.join(',') + '\n';
 
         response.forEach(doc => {
@@ -21,7 +21,8 @@ async function fetchResponses() {
                 data.street || '',
                 data.city || '',
                 data.province || '',
-                data.postal_code || ''
+                data.postal_code || '',
+                data.csvURL || ''
             ].map(field => `"${field}"`).join(',');
 
             csvContent += row + '\n';

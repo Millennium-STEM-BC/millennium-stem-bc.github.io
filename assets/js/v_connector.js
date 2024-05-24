@@ -1,5 +1,6 @@
 let db = firebase.firestore();
 let text = null;
+let storage = firebase.storage();
 
 function search() {
     const term = document.getElementById('searchbar').value.toLowerCase();
@@ -144,7 +145,7 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
             smoothScrollAboveElement('promote-extra-curricular', 30);
             
             document.getElementById('submit-extra-curricular').addEventListener('click', function() {
-                processExtraCurricularForm(text);
+                uploadToStorage(file, text);
                 alert('Your CSV file has been successfully uploaded. We will review your submission shortly.');
             });
         };
@@ -154,7 +155,7 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
     }
 });
 
-function processExtraCurricularForm(text) {
+function processExtraCurricularForm(file, text, downloadURL) {
     const website = document.getElementById('organization-website').value;
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('lastname').value;
@@ -185,10 +186,11 @@ function processExtraCurricularForm(text) {
                 street: street,
                 city: city,
                 province: province,
-                postal_code: postal_code
+                postal_code: postal_code,
+                csvURL: downloadURL
             })
             .then(() => {
-                processCSV(text);
+                processCSV(text)
                 alert('Thank you for your submission! We will review it shortly.');
             })
         } else {
@@ -205,15 +207,33 @@ function processExtraCurricularForm(text) {
                 street: "N/A",
                 city: "N/A",
                 province: "N/A",
-                postal_code: "N/A"
+                postal_code: "N/A",
+                csvURL: downloadURL
             })
             .then(() => {
-                processCSV(text);
+                processCSV(text)
                 alert('Thank you for your submission! We will review it shortly.');
             })
         }
     } else {
         alert('Please fill out all fields.')
+    }
+}
+
+function uploadToStorage(file, text) {
+    if (file) {
+        const storageRef = storage.ref(`/V_Connector_Contribute_Responses/${file.name}`);
+        const uploadTask = storageRef.put(file);
+
+        uploadTask.on('stage_changed', (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+        }, (error) => {
+            console.error('Error uploading file: ', error);
+        }, async () => {
+            const downloadURL = await storageRef.getDownloadURL();
+            processExtraCurricularForm(file, text, downloadURL);
+        })
     }
 }
 
