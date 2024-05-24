@@ -19,7 +19,7 @@ function search() {
                     const location = data.location.toLowerCase();
 
                     if (title.includes(term) || organization.includes(term) || location.includes(term)) {
-                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status, data.notes);
                     }
                 });
             })
@@ -30,7 +30,7 @@ function search() {
 }
 
 
-function add(title, organization, description, url, type, location, status) {
+function add(title, organization, description, url, type, location, status, notes) {
     const titleWords = title.toLowerCase().split(' ');
     const organizationWords = organization.toLowerCase().split(' ');
 
@@ -43,18 +43,19 @@ function add(title, organization, description, url, type, location, status) {
         url: url,
         type: type,
         location: location,
-        status: status
+        status: status,
+        notes: notes
     })
 }
 
-function createOpportunityCard(title, organization, description, url, type, location, status) {
+function createOpportunityCard(title, organization, description, url, type, location, status, notes) {
     return `
         <div class="bg-white shadow rounded-lg p-4 mb-4 flex justify-between items-center hover:scale-105 transition-transform duration-200">
             <div>
                 <h3 class="text-lg font-bold">${title}</h3>
                 <p class="text-gray-600 font-semibold">${organization}</p>
                 <p class="text-gray-600 my-2 mr-16">${description}</p>
-                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><button onclick="if ('${location}' != 'N/A') window.location = 'https://maps.google.com?q=${location}';"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span></button>
+                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><button onclick="if ('${location}' != 'N/A') window.location = 'https://maps.google.com?q=${location}';"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span></button><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/10">${notes}</span>
             </div>
 
             <span class="sm:ml-3">
@@ -84,7 +85,7 @@ function triggerFilter(id) {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status, data.notes);
                 })
             })
         }
@@ -96,7 +97,7 @@ function triggerFilter(id) {
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                    div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status, data.notes);
                 })
             })
         }
@@ -108,7 +109,7 @@ function triggerFilter(id) {
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const data = doc.data();
-                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                        div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status, data.notes);
                     })
                 })
         }
@@ -122,7 +123,7 @@ function loadOpportunityCards() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
-                div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status);
+                div.innerHTML += createOpportunityCard(data.title, data.organization, data.description, data.url, data.type, data.location, data.status, data.notes);
             });
         })
         .catch((error) => {
@@ -144,6 +145,7 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
             
             document.getElementById('submit-extra-curricular').addEventListener('click', function() {
                 processExtraCurricularForm(text);
+                alert('Your CSV file has been successfully uploaded. We will review your submission shortly.');
             });
         };
         reader.readAsText(file);
