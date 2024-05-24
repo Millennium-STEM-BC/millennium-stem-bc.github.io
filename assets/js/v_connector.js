@@ -1,4 +1,5 @@
 let db = firebase.firestore();
+let text = null;
 
 function search() {
     const term = document.getElementById('searchbar').value.toLowerCase();
@@ -130,6 +131,7 @@ function loadOpportunityCards() {
 }
 
 document.getElementById('csvForm').addEventListener('submit', function (e) {
+    const extracurricular_form = document.getElementById('promote-extra-curricular');
     e.preventDefault();
 
     const file = document.getElementById('csvFile').files[0];
@@ -137,11 +139,81 @@ document.getElementById('csvForm').addEventListener('submit', function (e) {
         const reader = new FileReader();
         reader.onload = function (e) {
             const text = e.target.result;
-            processCSV(text);
+            extracurricular_form.style.display = 'block';
+            smoothScrollAboveElement('promote-extra-curricular', 30);
+            
+            document.getElementById('submit-extra-curricular').addEventListener('click', function() {
+                processExtraCurricularForm(text);
+            });
         };
         reader.readAsText(file);
+    } else {
+        alert('Please upload an CSV file.');
     }
 });
+
+function processExtraCurricularForm(text) {
+    const website = document.getElementById('organization-website').value;
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const email = document.getElementById('email').value;
+    const organization_name = document.getElementById('organization-name').value;
+    const program_name = document.getElementById('program-name').value;
+    const status = document.getElementById('status-select').value;
+    const type = document.getElementById('type-select').value;
+    const about = document.getElementById('about').value;
+
+    const street = document.getElementById('street-address').value;
+    const city = document.getElementById('city').value;
+    const province = document.getElementById('region').value;
+    const postal_code = document.getElementById('postal-code').value;
+
+    if (website && firstname && lastname && email && organization_name && program_name && status && type && about) {
+        if (type === 'In Person') {
+            db.collection('V_Connector_Contribute_Responses').add({
+                url: website,
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                organization: organization_name,
+                title: program_name,
+                status: status,
+                type: type,
+                description: about,
+                street: street,
+                city: city,
+                province: province,
+                postal_code: postal_code
+            })
+            .then(() => {
+                processCSV(text);
+                alert('Thank you for your submission! We will review it shortly.');
+            })
+        } else {
+            db.collection('V_Connector_Contribute_Responses').add({
+                url: website,
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                organization: organization_name,
+                title: program_name,
+                status: status,
+                type: type,
+                description: about,
+                street: "N/A",
+                city: "N/A",
+                province: "N/A",
+                postal_code: "N/A"
+            })
+            .then(() => {
+                processCSV(text);
+                alert('Thank you for your submission! We will review it shortly.');
+            })
+        }
+    } else {
+        alert('Please fill out all fields.')
+    }
+}
 
 function processCSV(text) {
     const lines = text.split('\n').map(line => line.trim()).filter(line => line);
@@ -178,6 +250,26 @@ function processCSV(text) {
     });
 }
 
+document.getElementById('type-select').addEventListener('change', function() {
+    var addressField = document.getElementById('organization-address-field');
+    if (this.value === 'In Person') {
+        addressField.style.display = 'block';
+    } else {
+        addressField.style.display = 'none';
+    }
+})
+
+function smoothScrollAboveElement(elementId, offset) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        const elementRect = element.getBoundingClientRect();
+        const elementTop = elementRect.top + window.pageYOffset;
+        window.scrollTo({
+            top: elementTop - offset,
+            behavior: 'smooth'
+        });
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     loadOpportunityCards();
