@@ -23,17 +23,20 @@ let auth = firebase.auth();
 document.addEventListener('DOMContentLoaded', (event) => {
     // video observer
     const video = document.querySelector('video');
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.muted = true;
-                video.play()
-            } else {
-                video.pause()
-            }
-        });
-    }, { threshold: 0.5 });
-    observer.observe(video);
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.muted = true;
+                    video.play()
+                } else {
+                    video.pause()
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(video);
+    }
 
     // newsletter observer
     const emailInput = document.getElementById('email-address');
