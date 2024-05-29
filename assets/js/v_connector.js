@@ -51,13 +51,18 @@ function add(title, organization, description, url, type, location, status, note
 }
 
 function createOpportunityCard(title, organization, description, url, type, location, status, notes) {
+    let notesTag = '';
+    if (notes !== 'N/A') {
+        notesTag = `<span class="mx-2 my-2 inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/10">${notes}</span>`;
+    }
+    
     return `
         <div class="bg-white shadow rounded-lg p-4 mb-4 flex justify-between items-center hover:scale-105 transition-transform duration-200">
             <div>
                 <h3 class="text-lg font-bold">${title}</h3>
                 <p class="text-gray-600 font-semibold">${organization}</p>
                 <p class="text-gray-600 my-2 mr-16">${description}</p>
-                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><button onclick="if ('${location}' != 'N/A') window.location = 'https://maps.google.com?q=${location}';"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span></button><span class="mx-2 my-2 inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/10">${notes}</span>
+                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">${type}</span><span class="mx-2 inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">${status}</span><button onclick="if ('${location}' != 'N/A') window.location = 'https://maps.google.com?q=${location}';"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">${location}</span></button>${notesTag}
             </div>
 
             <span class="sm:ml-3">
