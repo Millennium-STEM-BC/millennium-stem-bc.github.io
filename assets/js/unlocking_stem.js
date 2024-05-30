@@ -4,7 +4,7 @@ let auth = firebase.auth();
 document.addEventListener('DOMContentLoaded', (event) => {
     // newsletter observer
     const emailInput = document.getElementById('email-address');
-    emailInput.addEventListener('keypress', function(e) {
+    emailInput.addEventListener('keypress', function (e) {
         if (e.key == 'Enter') {
             e.preventDefault();
             subscribeNewsletter();
