@@ -61,7 +61,8 @@ function subscribeNewsletter() {
         email: email
     }).then(() => {
         document.getElementById('email-address').value = '';
-        alert('Thank you for subscribing to our newsletter');
+        
+        window.location = `https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=pp_url&entry.829953346=${email}`;
     }).catch((error) => {
         alert('Error subscribing to newsletter. Please try again later.');
     });
