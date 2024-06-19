@@ -1,0 +1,490 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium STEM BC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/stemcon_2024.css" />
+    <link rel="stylesheet" href="/assets/css/unlocking_stem.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="/assets/js/helpers/add_to_calendar_btn.js" async defer></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="assets/js/firebase_init.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="/index.html">
+                <div class="text-lg font-semibold">Millennium STEM BC</div>
+            </a>
+            <div class="space-x-4 text-black">
+                <a href="/our_team.html" class="text-black-600 hover:text-blue-800 font-semibold">Our Team</a>
+                <a href="/v_connector.html" class="text-black-600 hover:text-blue-800 font-semibold">Volunteer
+                    Connector</a>
+                <a href="/stemcon_2024.html" class="text-black-600 hover:text-blue-800 font-semibold">StemCon 2024</a>
+                <a href="/unlocking_stem.html" class="text-black-600 hover:text-blue-800 font-semibold">Unlocking
+                    STEM</a>
+                <a href="/past_initiatives.html" class="text-black-600 hover:text-blue-800 font-semibold">Past
+                    Initiatives</a>
+                <button type="button"
+                    onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSeEX67dCl21tveki2OioAXVolss3MOfOm2JdJUkwXoTUe0UzQ/viewform?usp=sf_link'"
+                    class="inline-flex items-center rounded-md border-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 hover:scale-105 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join
+                    our mailing list
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-background py-32 text-center text-white">
+        <h1 class="text-8xl font-bold mb-4">Unlocking STEM</h1>
+        <h2 class="text-4xl italic font-bold mb-4">Speaker series</h2>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-12">
+        <div class="bg-white p-8 shadow-md">
+            <div class="container mx-auto px-4 py-4">
+                <!-- Transcripts -->
+                <div>
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-3/4">
+                            <h1 class="text-2xl font-bold mb-4">Unlocking STEM Episode 5: Artificial Intelligence and
+                                Product Design!</h1>
+                            <p class="text-sm text-gray-600 mb-2">Interview with Yuan Fang</p>
+                            <p class="text-sm text-gray-600 mb-4">Host: Anders Lee</p>
+                            <div class="space-y-4">
+                                <p class="text-md font-semibold text-gray-900">(Intro Music)</p>
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Hi, thank you so much for coming.
+                                    I’m Anders. I am the co-finance and sponsorship director of Millenium STEM’s
+                                    Executive Team and this is Sophie, the co-chair of Millennium STEM. </p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Great, nice to meet you guys.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Nice to meet you too. I’d just
+                                    like to ask you a few questions about your journey to STEM. To start off, could you
+                                    introduce yourself?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Sure. My name is Yuan Fang and
+                                    currently, I am the Senior Director of Product Management at SolarWinds. We create
+                                    enterprise software to monitor their network deployment for both on-prem and cloud.
+                                    You know, currently, [with] people working from anywhere, it creates complexity for
+                                    enterprises in how they manage their user's access, how they manage their security
+                                    for their infrastructure, for either network, for their database, [or] for
+                                    applications. What we do is provide them a solution so they always know what’s going
+                                    on inside and outside of their networks.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much for that
+                                    overview of your company. Could you tell us about your education and how you started
+                                    off in STEM?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Education-wise, I graduated from
+                                    UBC in computer engineering. I also have an executive MBA degree from a
+                                    China-European business school, and my entry into STEM was kind of easy. Both of my
+                                    parents work in academia; my father is a professor in electrical engineering and my
+                                    mother is a professor in mathematics. So to me, being born into a STEM-based family,
+                                    I was exposed to a lot of resources – books they gave me that I read, not for
+                                    learning but just [out of] general interest. One of the interests when I was in
+                                    elementary school that I still remember was how to communicate with aliens. There’s
+                                    a book…I would stay up late at night and stare up at the stars and try to talk to
+                                    the stars. Those were the things that kids would do, but it slowly evolved into
+                                    interests like “Oh! There are different types of stars, and black holes? And what
+                                    about them?” That’s how I got more interested into STEM.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>You mentioned earlier that you
+                                    went to UBC and that you also went to China for business school. How do you make
+                                    that decision to go to another country for another degree?
+                                </p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>That’s a good question. One of
+                                    the things that gives me satisfaction working in STEM areas is that you get to
+                                    create technology that changes people’s lives. When I graduated from UBC, my first
+                                    job was working for Hughes aircraft. What we [worked on] was an air-traffic control
+                                    system. Before that, not just in Canada but around the world, the whole air-traffic
+                                    control system was manual. The pilot talks to the tower and the tower has the charts
+                                    on paper and they monitor… putting the airplanes onto different trajectories and
+                                    making sure they can manage that. One is that it's very labor intensive. Two, you
+                                    can’t really scale, right? You can’t really keep too many airplanes without some
+                                    kind of a safety mechanism in place so you have to limit the number of planes that
+                                    can come into and come out of different airports. So the system we built was an
+                                    automated system – a computerized base that back in the 1990s that changed the whole
+                                    air-traffic control system. Today, the volume of air-traffic control is probably 10x
+                                    to what the late 90s was. And I wouldn’t say that everything should be done like
+                                    that, but that automated control system was definitely a factor in allowing more
+                                    air-traffic and travel for people. The reason why I went to China was that my second
+                                    job was working for Motorola, and I think you guys are used to I-phones, [being]
+                                    born in the wireless access-to-data era. Back in the 90s that wasn’t the case. In
+                                    the 90s, fixed broadband was just starting. You had broadband when you’re sitting
+                                    somewhere with a computer plugged into a model, you have one or up to five megabits
+                                    per second. That was considered to be “broadband”. If you were on the phone, on
+                                    mobile, it was SNS only. You can text, but you can’t really do data. So at Motorola,
+                                    what we developed was the first generation of wireless data. It’s called the GPRS,
+                                    and the first generation was analog, so you can talk to each other. The second
+                                    generation was digital, you can talk to each other, you can send data. GPRS was
+                                    supposed to be the 2 and a half generation, where now you can start to send a
+                                    limited amount of data. So once this technology matures – and obviously, you know,
+                                    China was a huge market – so Motorola wanted to market their technology to China.
+                                    They asked, you know, if anyone was interested and of course [people were]. I was
+                                    born in Beijing and that was an opportunity for me to go back to my home country and
+                                    bring the product I’d built into that market, so that’s why I went to China as my
+                                    career gave [me] opportunities. And the business school I went to wasn’t a full-time
+                                    degree, but it was a career-development that companies, seeing me grow in my career,
+                                    wanted me to have more business knowledge. </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much. I’m curious
+                                    about you mentioning the development of analogs, digital and that quick process of
+                                    optimization. What do you see for the future of technology?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Right. I think things are still
+                                    going a little bit in circles, like it started – when you look back at history –
+                                    very much of a human-driven thinking. It started as humans who empower and build
+                                    systems , based on not data-driven but philosophical and different ruling systems.
+                                    Then, as those systems moved into a computerized age, we became much more
+                                    data-driven. When we make a decision nowadays, we look at data, [which eventually]
+                                    went from small to big. But I think at a certain point we’ve gone back to what
+                                    people need, [our] emotional need, what society needs. Because too much data is
+                                    making us unable to consume it all. You look at any data source, whether that be
+                                    Twitter or Instagram or Facebook, it’s a stream that never ends. You can never say:
+                                    “I’ve finished reading everything.” You have to be selecting, and in many
+                                    circumstances, those algorithms are dictating what we can see. And in many cases
+                                    that’s bad; we’re being influenced without even knowing. So now there’s a lot of
+                                    questions about how to make sure that technology is indeed helping us and not
+                                    bombarding or flooding us with a lot of information that in many ways is hijacking
+                                    us, whether intentionally or unintentionally. I think the next step is deciding how
+                                    to steer technology into the right trajectory for us, collectively, as a
+                                    civilization.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you for that answer, that
+                                    was very insightful! Do you think that AI plays a role in any of this?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Definitely. AI, you see, is a
+                                    fancy term. What it’s really saying is that you have a large amount of data, and if
+                                    you just digest data the same way that we used to – reading it, trying to process it
+                                    – it’s not scalable. You cannot deal with that amount of data. So AI or ML is a way
+                                    of us building algorithms similar to what human thinking is but at a much faster
+                                    speed, so we can digest that information. So AI again, that artificial part is
+                                    intelligence but not real intelligence in the sense that it’s still based on human
+                                    understanding of the algorithm, and is still very much based on what our knowledge
+                                    is. As our knowledge improves, so does AI. It’s like a machine; if you’re trying to
+                                    farm by hand, you can only farm maybe half a hectare in a season. But once you have
+                                    those algorithm machines, you can now farm a much larger area. AI, similarly, is a
+                                    tool that we have. One thing that is key, in my opinion, is that AI is a tool for
+                                    us. It’s not an entirely different thing, it’s not unparallel with our thinking.
+                                    It’s just part of a tool that expands our ability.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>I’m just going to reference back
+                                    to your work. Could you describe what a typical day at work looks like?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>A typical day would start fairly
+                                    early, as it’s a Texas based company and they’re 2 hours [ahead] and there’s many
+                                    different meetings. The role of a product manager is that you make decisions with
+                                    where the product needs to go in the sense of direction. Because every company and
+                                    every project has finite resources, so you have to tell the engineering team based
+                                    on what you hear and your research on the market and what the competition is doing –
+                                    basically what the overall market is evolving into – in order to build a roadmap on
+                                    what YOU want the engineering team to develop. So a lot of time is spent on talking
+                                    to customers, talking to sales, talking to FCs, talking to engineering teams, and
+                                    really applying that knowledge that you gain into balancing short-term and long-term
+                                    needs. All the while trying to draw balance between the financial returns of the
+                                    product versus the long-term competitive means of the product. Much time is spent on
+                                    these meetings and processing information, and some outcomes of that work would be:
+                                    providing business models – ie. “my projection is that the product will grow by x
+                                    percent in the next few quarters” and this is my view on the competitive landscape,
+                                    and working with the engineering team to bring all our innovative ideas into
+                                    reality.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you for that. We know that
+                                    technology is changing a lot; it’s changing rapidly. How would you go about advising
+                                    younger students interested in starting in tech fields, what branch, and why?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>One thing, at least when I went
+                                    to school, is that universities use very antique tech. It’s very hard to keep up
+                                    with the latest. When you go out of school you discover “Oh! What I learned was
+                                    really dinosaur-tech.” But that really didn’t matter. Because technology is about
+                                    knowledge. You weren’t born with technology, but with an ability to learn. So that’s
+                                    the most important part. It’s not about the technology you work with. In our
+                                    industry, technology evolves very fast. What you learn as “cutting-edge” today will
+                                    become table-steak 2 years from now and out-of-date probably 5 years from now. So
+                                    you’ll never be able to say “I’ve mastered all the latest tech I have nothing else
+                                    to learn.” The key thing is to keep refreshing yourself and keep current. I also
+                                    keep an open-mind, always be ready to pick up the latest and quickly understand what
+                                    that technology is, what its benefits are, and I truly think that ability to learn
+                                    is the most essential skill – not technology itself.
+                                </p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>When you were navigating through
+                                    your university life, what were your methods for learning?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Yeah, I’m probably not the model
+                                    student that I want other people to mimic (laughs). For me, it was really about
+                                    getting through university with the least amount of effort. I was definitely not the
+                                    type that would study 18h a day and try to get the best possible grade. I was more
+                                    looking at it like “if the course is interesting, then I’ll devote time, but if it
+                                    isn’t intriguing, I’ll try to spend enough time to pass it”. But one thing if I were
+                                    to go back to my university life, I wish I would’ve spent more time in learning
+                                    things that weren’t just on those mandatory credits I had to take to graduate. One
+                                    thing I learned was that once you get into a professional career – for me that’s the
+                                    IT/computer industry – every other discipline will be a factor. You’re going to be
+                                    working with customers that come from a law background, people that come from the
+                                    consumer industry. So my main encouragement for STEM students would be to not just
+                                    look at STEM itself but take more electives and have a broader knowledge of
+                                    disciplines like the arts and other science fields that will all prove to be useful
+                                    later on in your career. You’re going to have many opportunities to work with
+                                    different verticals, and having that knowledge in school would give you an advantage
+                                    compared to others. So if I were to travel back to my university days, I’d probably
+                                    do less in engineering and more in executive courses to broaden my knowledge.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>On that note, talking about STEM
+                                    is a really broad topic as it connects to many different subjects. Given your field
+                                    of work, how do you think science or STEM connect to business, and how do those
+                                    worlds overlap?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>For STEM, before you could say
+                                    that selling a computer is a business and that the science aspect of the computer
+                                    itself is isolated. But now…I was just on call with a colleague who showed me a new
+                                    website, called DALL-E, that’s a project from OpenAI. [On this website] if you have
+                                    in the description something like kids playing water on Mars, the AI algorithm will
+                                    generate a drawing to match. That’s an extremely interesting idea. But what we can
+                                    see is that this is connecting many different disciplines together. Before we needed
+                                    to spend many many hours learning how to draw. With tools like this, it’s all about
+                                    ideas. If I have an idea and know what I want to create, I don’t need to learn how
+                                    to draw anymore when these types of tools are available. This is truly what STEM is
+                                    doing for us; it’s allowed us to be able to do a lot of the things that previously
+                                    required a lot of learning and shifts the focus on generating ideas. What is it that
+                                    you want to do with technology? How do you make the technology to generate outcomes
+                                    that people desire? How do you stimulate interest? I think that’s the part that will
+                                    help us stop viewing STEM and technology as an isolated piece and more as a tool, an
+                                    engine, and more importantly consider what we want that tool to do for us. And
+                                    technology itself cannot tell us that. We have to come up with business ideas for
+                                    technological tools to fuel, like an engine to a car.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>I’ve actually seen that website
+                                    before, the drawing, and I think it’s really fascinating. I just want to ask: how do
+                                    you go about that innovation or that process of thinking of a new idea? Something
+                                    totally original?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Firstly, I don’t want to burst
+                                    the bubble but the most original ideas…I’ll just say don’t get too hung up with
+                                    over-original ideas. The reason for that is if it’s still original, it probably
+                                    means that there’s a high chance of it not working (laughs). A lot of times, I’ll
+                                    say, it’s incremental improvements that make a big difference. So start with that,
+                                    start with incremental. You know, for example, in my line of work – when we talk to
+                                    the customers, I mean, at the end of the day, the use of those products doesn’t
+                                    change that drastically. If I’m a network administrator or a web or application
+                                    developer, the application I’m developing today is probably very different in looks
+                                    and feels and complexity from 20 years ago. But those applications [from 20 years
+                                    ago] whether they’re still used for games or HR applications or business
+                                    data-process application – the contexts in which its used in doesn’t change that
+                                    much. When you look at innovation, don’t always think this is going to be a
+                                    groundbreaking idea, but look at it like “How do I help the same people to make
+                                    their lives a little bit better, a little bit easier.” Then those smaller
+                                    innovations add up. Because if you make their lives 5% more efficient this year, you
+                                    do another thing that makes it 10% more innovative – it’s like an investment.
+                                    Compound interest. If you have a fixed percentage every year, then every 7-8 years
+                                    you’re going to double. Of course, there are going to be groundbreaking ideas, say
+                                    like SpaceX with their reusable rockets. Those ideas come once in a while, but not
+                                    every company will be in the position to do that kind of groundbreaking thing. So
+                                    don’t limit yourself in thinking that unless I come up with a groundbreaking idea,
+                                    I’m not really innovating. That’s the part that I want to convey: little innovation
+                                    matters.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>I like that optimization of a
+                                    program can really make my life more efficient in that way. So what do you think, in
+                                    your career,what was one of your biggest optimizations of maybe yourself or just
+                                    something in your work that you optimized?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>I mean, optimization is…let me
+                                    play back. I think what you’re really asking here is how to maximize the growth
+                                    opportunities. For me, one of the big parts was my decision to take this opportunity
+                                    to go back to China and work for 10 years there. This really opened up my eyes
+                                    because, in Canada, we’re a Western, large country but with a smaller population. So
+                                    here, in comparison to 1.4 billion people, it’s a very different market. So for me,
+                                    being a Chinese native – [I] speak the language, understand the culture – being able
+                                    to spend time working in China and then also understand Western culture and how the
+                                    technology is built, market and customer needs, to me that was very beneficial
+                                    towards my entire career. You have exposure to both the technical front and the
+                                    go-to-market front. You know how sales are made, how to go to the market and market
+                                    the technology, that has been very helpful to my career. Everyone’s opportunities
+                                    will be unique to their own choices and their own growth path, but for me that was a
+                                    bold move at the time. Even though I grew up in China at a young age, I’d never
+                                    worked there so from a career-standpoint, that was a bold move. But I think I would
+                                    definitely do it again. After that, I then moved to Singapore and moved back to
+                                    Canada. I did a number of different roles, starting from software engineering then
+                                    pre-sales and marketing, and in the last 10+ years product management. They’re
+                                    different jobs, but every part of the experience adds up. Because your engineering
+                                    background helps you market products because if you know the product, you can market
+                                    it better. Then your marketing experience makes your product management skillset
+                                    much better. So the point here is to not stay in one role and try to expand into
+                                    different areas, and reach both your appeals from your employers as well as giving
+                                    yourself a broad skill set so you can grow in different capacities.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>You mentioned moving jobs – what
+                                    would you say was the difference in workplace culture moving from job to job?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>That’s a great question. Every
+                                    company is different: different technology, different culture. Also, each company is
+                                    at a different stage in its life cycle. A start-up company has a very different
+                                    mentality than a large fortune-500 company, and then there are mid-sized companies
+                                    that are kind of in between. For me, what I learned was that the most important
+                                    thing is people. It’s never about working on the coolest technology. Who you are
+                                    working with and the company culture, whether you’re able to fully be yourself and
+                                    make an impact, having a supportive environment is important. None of us are going
+                                    to be heroes by ourselves; we all need a supporting system that, when you start your
+                                    career, you need to be in an environment that helps you to grow, learn, and gives
+                                    you exposure to different things. Whether you’re in title, a composition is not
+                                    number one. Others will catch up very quickly. So my advice for young graduates is
+                                    that for your first couple of jobs, it’s really about finding a place where you can
+                                    truly learn. Learning is something that needs support. If your employer expects you
+                                    to keep doing the same thing over and over again so they can derive maximum
+                                    efficiency and leave you no time to pick up new skills, I would advise against it. I
+                                    would rather go into a place where one, [it] uses your skill sets but views you as a
+                                    young, emerging star and gives you time to learn. Two, company politics is ever at
+                                    work and don’t be afraid of it, but definitely work in teams and with people you
+                                    enjoy working with. Don’t force yourself into a position where you’re like “I don’t
+                                    want to talk to anyone, I just want to be by myself”. That to me is definitely not a
+                                    good sign. You want to be in an immersive, collaborative environment where you get
+                                    to truly explore different things.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Across these interviews,
+                                    collaboration has been a very constant theme and having a good support system is
+                                    vital to doing your work. So my question is: Has there been a specific mentor that
+                                    has really helped you on your journey through STEM?</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Yes, absolutely. I’ve had a
+                                    number of mentors that almost everyone I talk to has had a mentor in their career.
+                                    When you start your job, there’s always someone to look up to. It could be your
+                                    director, manager, or a senior staff on the steam that gives you a lot of advice and
+                                    tips. For me, yes. Every step of my career, there has been a mentor that has helped
+                                    me in different capacities. My first mentor, he was in aircraft, and [back] then I
+                                    had basic training on coding and what OS is but I’d never been on a big project
+                                    before. So he was the one that really introduced me to how to operate large team
+                                    environments, how to grow in terms of technology complexities. Then it was my own
+                                    experience growth, and my next few mentors who gave different sets of knowledge or
+                                    leadership guidance. Again, it’s not just limited to STEM. STEM is just a specialty,
+                                    and your mentor could come at a later part of your career. Your mentor probably
+                                    comes more from a leadership angle, people who help you grow in your capacity and
+                                    help you make a bigger impact. Because at the end of the day, the more you know, the
+                                    more impact you should be able to make. That’s where the mentor comes in, they help
+                                    you understand how to elevate yourself to the next level of your career.</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Talking about levels (laughs)
+                                    this is kind of a fun question. How would you graph the structure of your life in
+                                    terms of past, present, and future.</p>
+                                <p class="text-md text-gray-900"><strong>Yuan:</strong>Well, that’s kind of a
+                                    ten-thousand foot question. I’ll say that looking back in my career, it’s really
+                                    about the impact. Impact in the sense of yourself, the company you work for, but
+                                    more importantly for me now is “Am I working on a product that’s going to have some
+                                    sort of a lasting impact to the customers I serve?” And ideally I want to look back
+                                    when I retire and see that I’ve done a few good things, a couple projects that I’m
+                                    proud of, and creating those lasting impacts for people. Those are the things that
+                                    I’d like to keep, not just growing in titles and salaries. Those are important, but
+                                    my real motivation right now is really about “Am I working on a project that gives
+                                    me that satisfaction that I’ve done something good?”</p>
+
+                                <p class="text-md text-gray-900"><strong>Host:</strong>Thank you so much. I think this
+                                    is a good place to conclude it, and I just want to say thank you for coming out
+                                    today and allowing me to interview you. So that is the end of our interview for
+                                    Unlocking STEM.</p>
+
+                                <p class="text-md font-semibold text-gray-900">(Ending Music)</p>
+
+                            </div>
+                        </div>
+                        <div class="lg:w-1/4 lg:pl-8 mt-8 lg:mt-0">
+                            <div class="flex flex-col items-center">
+                                <img src="/assets/img/logo.png" width="250" height="250" alt="Portrait of Yuan Fang"
+                                    class="rounded-full mb-4">
+                                <p class="text-center text-md font-semibold">Yuan Fang</p>
+                                <button type="button"
+                                    onclick="window.location='https://www.youtube.com/watch?v=r2zbO6P7F3g&ab_channel=MillenniumSTEMBC'"
+                                    class="inline-flex items-center rounded-md border-2 bg-white px-3 py-2 mt-2 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-white transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black-600">
+                                    Listen on YouTube
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="mt-10 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
+                        <p>&copy; 2024 Unlocking STEM, Millennium STEM BC. All rights reserved.</p>
+                        <p>Privacy Policy | Terms of Service</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 justify-center">
+            <div class="flex items-center grid-cols-1 gap-x-8 gap-y-16 justify-center">
+                <div class="max-w-xl lg:max-w-lg justify-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.
+                    </h2>
+                    <p class="mt-4 text-lg leading-8 text-gray-300">To get early updates on our opportunities and
+                        events!</p>
+                    <div class="mt-6 flex max-w-md gap-x-4">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                            placeholder="Enter your email">
+                        <button type="submit" onclick="subscribeNewsletter()"
+                            class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+            <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Recognitions -->
+    <div class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm text-white select-none">
+                We would like to acknowledge that Millennium STEM BC is situated on the unceded territories of the Coast
+                Salish peoples—Sḵwx̱wú7mesh (Squamish), Stó:lō and Səl̓ílwətaɬ (Tsleil-Waututh), and xʷməθkʷəy̓əm
+                (Musqueam)
+                Nations, and we honour the many territorial keepers of the lands on which we work, seek to recognize and
+                address the systemic barriers that have historically restricted Indigenous peoples from pursuing success
+                in
+                STEM fields, thereby excluding critically valuable diverse perspectives. Funding scientific research,
+                and
+                preserving their cultures, languages, and traditions. Our work in diversifying STEM spaces is not
+                complete.
+                Decolonization is an ongoing process—we aim to elevate Indigenous voices in all of our initiatives, and
+                to
+                continually grow our understanding of how we can contribute to the reconciliation process.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative isolate overflow-hidden bg-gray-900 pb-8 px-8 pr-8" style="color: white;">
+        <!-- Instagram and Email -->
+        <button onclick="window.location='https://www.instagram.com/millenniumbc/'" class="pr-4">
+            <div class="flex items-center space-x-4 mb-6">
+                <a href="https://www.instagram.com/millenniumbc" class="text-white">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <span class="text-sm">millenniumbc</span>
+            </div>
+        </button>
+        <button onclick="window.location='mailto:millenniumstem.bc@gmail.com'">
+            <div class="flex items-center space-x-4 mb-6">
+                <a href="mailto:millenniumstem.bc@gmail.com" class="text-white">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+                <span class="text-sm">millenniumstem.bc@gmail.com</span>
+            </div>
+        </button>
+        <!-- Divider -->
+        <div class="col-span-2 md:col-span-3">
+            <hr class="border-gray-600 my-6">
+        </div>
+        <!-- Copyright -->
+        <div class="col-span-2 md:col-span-3 text-sm">
+            &copy; 2024 Millennium STEM British Columbia
+        </div>
+        <div class="mx-auto flex item-center max-w-7xl justify-center">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+<script src="/assets/js/unlocking_stem.js"></script>
+
+</html>
