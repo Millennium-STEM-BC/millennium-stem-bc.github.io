@@ -21,6 +21,9 @@ let auth = firebase.auth();
 // });
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    animateValue('students-engaged', 0, 300, 500);
+    animateValue('initiatives', 0, 10, 500);
+
     // video observer
     const video = document.querySelector('video');
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -78,4 +81,21 @@ function smoothScrollAboveElement(elementId, offset) {
             behavior: 'smooth'
         });
     }
+}
+
+function animateValue(id, start, end, duration) {
+    let range = start - end
+    let current = start;
+    let increment = end > start ? 1 : -1;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let obj = document.getElementById(id);
+
+    let timer = setInterval(function () {
+        current += increment;
+        obj.innerText = current.toLocaleString();
+        if (current === end) {
+            obj.innerText = obj.innerHTML + '+';
+            clearInterval(timer);
+        }
+    }, stepTime)
 }

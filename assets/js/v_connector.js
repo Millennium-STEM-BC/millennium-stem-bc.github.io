@@ -311,10 +311,15 @@ function exportResponses() {
     })
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+// added search delay to prevent too many requests
+document.addEventListener('DOMContentLoaded', function() {
     loadOpportunityCards();
-    document.getElementById('searchbar').addEventListener('input', search)
-});
+    let searchTimeout;
+    document.getElementById('searchbar').addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(search, 300);
+    })
+})
 
 function subscribeNewsletter() {
     const email = document.getElementById('email-address').value;
