@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://millennium-stem-bc.github.io/sitemap.xml
