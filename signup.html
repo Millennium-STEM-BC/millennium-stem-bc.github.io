@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="/assets/css/signin.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTSS47MSN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DYTSS47MSN');
+    </script>
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -22,7 +32,8 @@
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <img class="mx-auto h-24 w-auto" src="/assets/img/logo.png" alt="Your Company">
-            <h2 class="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create a Millennium account</h2>
+            <h2 class="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create a Millennium
+                account</h2>
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -54,7 +65,8 @@
 
             <p class="mt-10 text-center text-sm text-gray-500">
                 Have an account?
-                <a onclick="redirectSignin();" style="cursor: pointer;" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in.</a>
+                <a onclick="redirectSignin();" style="cursor: pointer;"
+                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in.</a>
             </p>
         </div>
     </div>

@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="/assets/css/signin.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTSS47MSN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DYTSS47MSN');
+    </script>
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -39,10 +49,12 @@
 
                 <div>
                     <div class="flex items-center justify-between">
-                        <label for="password" id="password-label" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <label for="password" id="password-label"
+                            class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                     </div>
                     <div class="mt-2">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required style="display: block;"
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                            style="display: block;"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
@@ -56,7 +68,8 @@
 
             <p class="mt-10 text-center text-sm text-gray-500">
                 First time?
-                <a onclick="redirectCreateAccount();" style="cursor: pointer;" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create an account.</a>
+                <a onclick="redirectCreateAccount();" style="cursor: pointer;"
+                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create an account.</a>
             </p>
         </div>
     </div>
